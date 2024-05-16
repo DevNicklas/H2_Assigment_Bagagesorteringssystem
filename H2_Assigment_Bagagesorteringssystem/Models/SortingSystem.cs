@@ -29,7 +29,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 					}
 				}
 			}
-
 			// If the baggage couldn't be sorted to any terminal, enqueue it in the input queue
 			inputQueue.Enqueue(baggage);
 		}
