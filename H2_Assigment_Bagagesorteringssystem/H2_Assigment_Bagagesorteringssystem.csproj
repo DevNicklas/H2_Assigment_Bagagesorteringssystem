@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Airport.cs" />
-    <Compile Include="Models\Baggage.cs" />
+    <Compile Include="Models\Baggage\Baggage.cs" />
     <Compile Include="Models\CheckIn.cs" />
     <Compile Include="Models\DataHandler.cs" />
     <Compile Include="Models\Passenger.cs" />
@@ -55,6 +55,7 @@
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\Plane.cs" />
     <Compile Include="Models\SortingSystem.cs" />
+    <Compile Include="Models\Baggage\Tag.cs" />
     <Compile Include="Models\Terminal.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>

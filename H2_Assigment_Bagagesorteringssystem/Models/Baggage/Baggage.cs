@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-    internal class Baggage
+    internal class Baggage : Tag
     {
         private float _weight = 0;
 

@@ -9,25 +9,30 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
     internal class Terminal : InventoryContainer
     {
         private bool _status = false;
+        private Plane _plane;
 
         internal bool Status
         {
-            get
-            {
-                return _status;
-            }
+            get { return _status; }
         }
-        public Terminal(int inventorySize) : base(inventorySize) { }
+
+		internal Plane Plane
+		{
+			get { return _plane; }
+			set { _plane = value; }
+		}
+
+		public Terminal(int inventorySize) : base(inventorySize) { }
 
 
 		internal void Open()
-        {
+		{
+			_status = true;
+		}
 
-        }
-
-        internal void Close()
-        {
-
-        }
-    }
+		internal void Close()
+		{
+			_status = false;
+		}
+	}
 }
