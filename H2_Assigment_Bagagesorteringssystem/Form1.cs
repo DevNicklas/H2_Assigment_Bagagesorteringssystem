@@ -16,5 +16,6 @@ namespace H2_Assigment_Bagagesorteringssystem
         {
             InitializeComponent();
         }
-    }
+
+	}
 }
