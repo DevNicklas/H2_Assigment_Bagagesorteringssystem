@@ -81,7 +81,7 @@
 			this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.panel2.Location = new System.Drawing.Point(67, 248);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(141, 38);
+			this.panel2.Size = new System.Drawing.Size(154, 38);
 			this.panel2.TabIndex = 1;
 			// 
 			// panel4
@@ -359,6 +359,7 @@
 			this.Plane1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.Plane1.TabIndex = 10;
 			this.Plane1.TabStop = false;
+			this.Plane1.Visible = false;
 			// 
 			// Plane2
 			// 
@@ -372,18 +373,23 @@
 			this.Plane2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.Plane2.TabIndex = 11;
 			this.Plane2.TabStop = false;
+			this.Plane2.Visible = false;
 			// 
 			// plane2TextBox
 			// 
 			this.plane2TextBox.Location = new System.Drawing.Point(1282, 321);
+			this.plane2TextBox.Multiline = true;
 			this.plane2TextBox.Name = "plane2TextBox";
+			this.plane2TextBox.ReadOnly = true;
 			this.plane2TextBox.Size = new System.Drawing.Size(100, 20);
 			this.plane2TextBox.TabIndex = 12;
 			// 
 			// plane1TextBox
 			// 
 			this.plane1TextBox.Location = new System.Drawing.Point(1282, 86);
+			this.plane1TextBox.Multiline = true;
 			this.plane1TextBox.Name = "plane1TextBox";
+			this.plane1TextBox.ReadOnly = true;
 			this.plane1TextBox.Size = new System.Drawing.Size(100, 20);
 			this.plane1TextBox.TabIndex = 13;
 			// 
