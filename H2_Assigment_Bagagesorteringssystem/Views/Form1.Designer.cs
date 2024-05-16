@@ -63,7 +63,7 @@
             this.plane2TextBox = new System.Windows.Forms.TextBox();
             this.plane1TextBox = new System.Windows.Forms.TextBox();
             this.sortingSystemQueue = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.toggleAirportStatusBtn = new System.Windows.Forms.Button();
             this.airportStatusLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.OpenSignCheckin1.SuspendLayout();
@@ -394,14 +394,14 @@
             this.sortingSystemQueue.Size = new System.Drawing.Size(257, 446);
             this.sortingSystemQueue.TabIndex = 14;
             // 
-            // button1
+            // toggleAirportStatusBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 40);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Open/close airport";
-            this.button1.UseVisualStyleBackColor = true;
+            this.toggleAirportStatusBtn.Location = new System.Drawing.Point(12, 29);
+            this.toggleAirportStatusBtn.Name = "toggleAirportStatusBtn";
+            this.toggleAirportStatusBtn.Size = new System.Drawing.Size(98, 40);
+            this.toggleAirportStatusBtn.TabIndex = 15;
+            this.toggleAirportStatusBtn.Text = "Open/close airport";
+            this.toggleAirportStatusBtn.UseVisualStyleBackColor = true;
             // 
             // airportStatusLabel
             // 
@@ -419,7 +419,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1434, 639);
             this.Controls.Add(this.airportStatusLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.toggleAirportStatusBtn);
             this.Controls.Add(this.sortingSystemQueue);
             this.Controls.Add(this.plane1TextBox);
             this.Controls.Add(this.plane2TextBox);
@@ -497,7 +497,7 @@
 		private System.Windows.Forms.TextBox plane2TextBox;
 		private System.Windows.Forms.TextBox plane1TextBox;
         private System.Windows.Forms.ListBox sortingSystemQueue;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button toggleAirportStatusBtn;
         private System.Windows.Forms.Label airportStatusLabel;
     }
 }
