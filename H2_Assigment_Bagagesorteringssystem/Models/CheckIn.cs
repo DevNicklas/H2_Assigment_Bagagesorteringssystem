@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+
+    /// <summary>
+    /// Represents a check-in counter in the baggage sorting system.
+    /// </summary>
     internal class CheckIn : InventoryContainer
 	{
         private bool _status = false;
@@ -49,11 +53,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// Services a passenger by processing their baggage and sending it to the sorting system.
         /// </summary>
         /// <param name="baggage">The baggage to be processed.</param>
-        internal void ServicePassenger(Baggage baggage)
+        internal bool ServicePassenger(Baggage baggage)
         {
+            if (!_status) return false;
+
             GetBaggage(baggage);
-            Thread.Sleep(100);
+            Thread.Sleep(100); // Simulate processing time
             SendBaggageToSortingSystem();
+            return true;
         }
 
         /// <summary>
@@ -75,6 +82,5 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
                 Airport.SortingSystems[0].EnqueueBaggage(baggage);
             }
         }
-
     }
 }
