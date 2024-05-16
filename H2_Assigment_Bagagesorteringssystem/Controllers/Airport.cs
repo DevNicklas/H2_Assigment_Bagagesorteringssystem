@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace H2_Assigment_Bagagesorteringssystem.Controllers
 {
@@ -56,15 +57,17 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal static void ChangeStatus()
+        internal static void ChangeStatus(Label statusLabel)
         {
             if(_status)
             {
                 _status = false;
+                statusLabel.Text = "Status: Closed";
             }
             else
             {
                 _status = true;
+                statusLabel.Text = "Status: Open";
             }
         }
 

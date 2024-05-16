@@ -20,14 +20,9 @@ namespace H2_Assigment_Bagagesorteringssystem
 
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
-            Airport.ChangeStatus();
-            if(Airport.Status)
+            if(!Airport.Status)
             {
-                airportStatusLabel.Text = "Status: Closed";
-            }
-            else
-            {
-                airportStatusLabel.Text = "Status: Open";
+                Airport.ChangeStatus(airportStatusLabel);
             }
         }
     }
