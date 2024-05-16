@@ -343,8 +343,7 @@
 			// Plane1
 			// 
 			this.Plane1.Cursor = System.Windows.Forms.Cursors.Cross;
-			this.Plane1.ImageLocation = "C:\\Users\\zbc23jakl\\Source\\Repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
-    "_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+			this.Plane1.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
 			this.Plane1.Location = new System.Drawing.Point(1065, 86);
 			this.Plane1.Margin = new System.Windows.Forms.Padding(0);
 			this.Plane1.Name = "Plane1";
@@ -357,8 +356,7 @@
 			// Plane2
 			// 
 			this.Plane2.Cursor = System.Windows.Forms.Cursors.Cross;
-			this.Plane2.ImageLocation = "C:\\Users\\zbc23jakl\\Source\\Repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
-    "_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+			this.Plane2.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
 			this.Plane2.Location = new System.Drawing.Point(1065, 321);
 			this.Plane2.Margin = new System.Windows.Forms.Padding(0);
 			this.Plane2.Name = "Plane2";
