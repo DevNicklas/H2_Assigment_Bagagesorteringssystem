@@ -23,7 +23,11 @@ namespace H2_Assigment_Bagagesorteringssystem
             airport.ChangeStatus();
             if(airport.Status)
             {
-                airportStatusLabel.Text = 
+                airportStatusLabel.Text = "Status: Closed";
+            }
+            else
+            {
+                airportStatusLabel.Text = "Status: Open";
             }
         }
     }
