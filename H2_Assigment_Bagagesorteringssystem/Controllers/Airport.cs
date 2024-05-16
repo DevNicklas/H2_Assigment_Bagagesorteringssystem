@@ -36,7 +36,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
         internal void AddPlane()
         {
-
         }
 
         internal void AddCheckIn()
@@ -46,7 +45,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
         internal void AddTerminal()
         {
+            _terminals.Add(new Terminal());
 
-        }
+		}
     }
 }

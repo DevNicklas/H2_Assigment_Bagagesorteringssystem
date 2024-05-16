@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-    internal class Terminal
+    internal class Terminal : InventoryContainer
     {
         private bool _status = false;
 
@@ -17,9 +17,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
                 return _status;
             }
         }
+        public Terminal(int inventorySize) : base(inventorySize) { }
 
 
-        internal void Open()
+		internal void Open()
         {
 
         }
