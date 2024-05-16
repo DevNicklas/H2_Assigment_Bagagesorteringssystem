@@ -53,18 +53,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         {
             if (!_status) return false;
 
-            GetBaggage(baggage);
+            this.AddToInventory(baggage);
             Thread.Sleep(100); // Simulate processing time
             SendBaggageToSortingSystem();
             return true;
-        }
-
-        /// <summary>
-        /// Adds baggage to the check-in inventory.
-        /// </summary>
-        internal void GetBaggage(Baggage baggage)
-        {
-            this.AddToInventory(baggage);
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using H2_Assigment_Bagagesorteringssystem.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,5 +35,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		{
 			_status = false;
 		}
-	}
+
+        internal void SendBaggageToPlane()
+        {
+            Baggage baggage = this.RemoveFromInventory();
+            if (baggage != null)
+            {
+                _plane.AddToInventory(baggage);
+            }
+        }
+    }
 }
