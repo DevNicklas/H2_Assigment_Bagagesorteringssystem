@@ -14,6 +14,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         {
 
         }
-        internal
+        internal SortingSystem(int inventorySize) : base(inventorySize) { }
     }
 }
