@@ -34,19 +34,19 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal void AddPlane()
+        internal void AddPlane(int size)
         {
-        }
+			_planes.Add(new Plane(size));
+		}
 
         internal void AddCheckIn()
         {
-
-        }
+			_checkIns.Add(new CheckIn(1));
+		}
 
         internal void AddTerminal()
         {
-            _terminals.Add(new Terminal());
-
+            _terminals.Add(new Terminal(1));
 		}
     }
 }
