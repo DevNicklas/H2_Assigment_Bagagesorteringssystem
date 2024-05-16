@@ -33,47 +33,47 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel5 = new System.Windows.Forms.Panel();
+			this.OpenSignCheckin1 = new System.Windows.Forms.Panel();
 			this.panel6 = new System.Windows.Forms.Panel();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.panel8 = new System.Windows.Forms.Panel();
-			this.panel9 = new System.Windows.Forms.Panel();
+			this.OpenSignCheckin2 = new System.Windows.Forms.Panel();
 			this.panel10 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel11 = new System.Windows.Forms.Panel();
 			this.panel12 = new System.Windows.Forms.Panel();
 			this.panel18 = new System.Windows.Forms.Panel();
 			this.panel19 = new System.Windows.Forms.Panel();
-			this.panel20 = new System.Windows.Forms.Panel();
+			this.OpenSignTerminal2 = new System.Windows.Forms.Panel();
 			this.panel21 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel22 = new System.Windows.Forms.Panel();
 			this.panel23 = new System.Windows.Forms.Panel();
 			this.panel24 = new System.Windows.Forms.Panel();
 			this.panel13 = new System.Windows.Forms.Panel();
-			this.panel14 = new System.Windows.Forms.Panel();
+			this.OpenSignTerminal1 = new System.Windows.Forms.Panel();
 			this.panel15 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel16 = new System.Windows.Forms.Panel();
 			this.panel17 = new System.Windows.Forms.Panel();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.sortingSystemListView = new System.Windows.Forms.ListView();
 			this.panel25 = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.Plane1 = new System.Windows.Forms.PictureBox();
+			this.Plane2 = new System.Windows.Forms.PictureBox();
+			this.plane2TextBox = new System.Windows.Forms.TextBox();
+			this.plane1TextBox = new System.Windows.Forms.TextBox();
 			this.panel1.SuspendLayout();
-			this.panel5.SuspendLayout();
+			this.OpenSignCheckin1.SuspendLayout();
 			this.panel8.SuspendLayout();
-			this.panel9.SuspendLayout();
+			this.OpenSignCheckin2.SuspendLayout();
 			this.panel19.SuspendLayout();
-			this.panel20.SuspendLayout();
+			this.OpenSignTerminal2.SuspendLayout();
 			this.panel13.SuspendLayout();
-			this.panel14.SuspendLayout();
+			this.OpenSignTerminal1.SuspendLayout();
 			this.panel25.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Plane1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.Plane2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panel2
@@ -112,7 +112,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.panel1.Controls.Add(this.panel5);
+			this.panel1.Controls.Add(this.OpenSignCheckin1);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.panel3);
 			this.panel1.Location = new System.Drawing.Point(67, 172);
@@ -120,14 +120,14 @@
 			this.panel1.Size = new System.Drawing.Size(132, 114);
 			this.panel1.TabIndex = 0;
 			// 
-			// panel5
+			// OpenSignCheckin1
 			// 
-			this.panel5.BackColor = System.Drawing.Color.Red;
-			this.panel5.Controls.Add(this.panel6);
-			this.panel5.Location = new System.Drawing.Point(99, 10);
-			this.panel5.Name = "panel5";
-			this.panel5.Size = new System.Drawing.Size(19, 60);
-			this.panel5.TabIndex = 4;
+			this.OpenSignCheckin1.BackColor = System.Drawing.Color.Red;
+			this.OpenSignCheckin1.Controls.Add(this.panel6);
+			this.OpenSignCheckin1.Location = new System.Drawing.Point(99, 10);
+			this.OpenSignCheckin1.Name = "OpenSignCheckin1";
+			this.OpenSignCheckin1.Size = new System.Drawing.Size(19, 60);
+			this.OpenSignCheckin1.TabIndex = 4;
 			// 
 			// panel6
 			// 
@@ -148,7 +148,7 @@
 			// panel8
 			// 
 			this.panel8.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.panel8.Controls.Add(this.panel9);
+			this.panel8.Controls.Add(this.OpenSignCheckin2);
 			this.panel8.Controls.Add(this.label2);
 			this.panel8.Controls.Add(this.panel11);
 			this.panel8.Location = new System.Drawing.Point(67, 299);
@@ -156,14 +156,14 @@
 			this.panel8.Size = new System.Drawing.Size(132, 114);
 			this.panel8.TabIndex = 5;
 			// 
-			// panel9
+			// OpenSignCheckin2
 			// 
-			this.panel9.BackColor = System.Drawing.Color.Red;
-			this.panel9.Controls.Add(this.panel10);
-			this.panel9.Location = new System.Drawing.Point(99, 10);
-			this.panel9.Name = "panel9";
-			this.panel9.Size = new System.Drawing.Size(19, 60);
-			this.panel9.TabIndex = 4;
+			this.OpenSignCheckin2.BackColor = System.Drawing.Color.Red;
+			this.OpenSignCheckin2.Controls.Add(this.panel10);
+			this.OpenSignCheckin2.Location = new System.Drawing.Point(99, 10);
+			this.OpenSignCheckin2.Name = "OpenSignCheckin2";
+			this.OpenSignCheckin2.Size = new System.Drawing.Size(19, 60);
+			this.OpenSignCheckin2.TabIndex = 4;
 			// 
 			// panel10
 			// 
@@ -209,7 +209,7 @@
 			// panel19
 			// 
 			this.panel19.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.panel19.Controls.Add(this.panel20);
+			this.panel19.Controls.Add(this.OpenSignTerminal2);
 			this.panel19.Controls.Add(this.label4);
 			this.panel19.Controls.Add(this.panel22);
 			this.panel19.Location = new System.Drawing.Point(936, 407);
@@ -217,14 +217,14 @@
 			this.panel19.Size = new System.Drawing.Size(105, 114);
 			this.panel19.TabIndex = 5;
 			// 
-			// panel20
+			// OpenSignTerminal2
 			// 
-			this.panel20.BackColor = System.Drawing.Color.Red;
-			this.panel20.Controls.Add(this.panel21);
-			this.panel20.Location = new System.Drawing.Point(61, 11);
-			this.panel20.Name = "panel20";
-			this.panel20.Size = new System.Drawing.Size(19, 60);
-			this.panel20.TabIndex = 4;
+			this.OpenSignTerminal2.BackColor = System.Drawing.Color.Red;
+			this.OpenSignTerminal2.Controls.Add(this.panel21);
+			this.OpenSignTerminal2.Location = new System.Drawing.Point(61, 11);
+			this.OpenSignTerminal2.Name = "OpenSignTerminal2";
+			this.OpenSignTerminal2.Size = new System.Drawing.Size(19, 60);
+			this.OpenSignTerminal2.TabIndex = 4;
 			// 
 			// panel21
 			// 
@@ -270,7 +270,7 @@
 			// panel13
 			// 
 			this.panel13.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.panel13.Controls.Add(this.panel14);
+			this.panel13.Controls.Add(this.OpenSignTerminal1);
 			this.panel13.Controls.Add(this.label3);
 			this.panel13.Controls.Add(this.panel16);
 			this.panel13.Location = new System.Drawing.Point(936, 172);
@@ -278,14 +278,14 @@
 			this.panel13.Size = new System.Drawing.Size(105, 114);
 			this.panel13.TabIndex = 7;
 			// 
-			// panel14
+			// OpenSignTerminal1
 			// 
-			this.panel14.BackColor = System.Drawing.Color.Red;
-			this.panel14.Controls.Add(this.panel15);
-			this.panel14.Location = new System.Drawing.Point(61, 11);
-			this.panel14.Name = "panel14";
-			this.panel14.Size = new System.Drawing.Size(19, 60);
-			this.panel14.TabIndex = 4;
+			this.OpenSignTerminal1.BackColor = System.Drawing.Color.Red;
+			this.OpenSignTerminal1.Controls.Add(this.panel15);
+			this.OpenSignTerminal1.Location = new System.Drawing.Point(61, 11);
+			this.OpenSignTerminal1.Name = "OpenSignTerminal1";
+			this.OpenSignTerminal1.Size = new System.Drawing.Size(19, 60);
+			this.OpenSignTerminal1.TabIndex = 4;
 			// 
 			// panel15
 			// 
@@ -320,14 +320,14 @@
 			this.panel17.Size = new System.Drawing.Size(141, 38);
 			this.panel17.TabIndex = 8;
 			// 
-			// listView1
+			// sortingSystemListView
 			// 
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(424, 172);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(257, 445);
-			this.listView1.TabIndex = 9;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.sortingSystemListView.HideSelection = false;
+			this.sortingSystemListView.Location = new System.Drawing.Point(424, 172);
+			this.sortingSystemListView.Name = "sortingSystemListView";
+			this.sortingSystemListView.Size = new System.Drawing.Size(257, 445);
+			this.sortingSystemListView.TabIndex = 9;
+			this.sortingSystemListView.UseCompatibleStateImageBehavior = false;
 			// 
 			// panel25
 			// 
@@ -347,45 +347,45 @@
 			this.label5.TabIndex = 3;
 			this.label5.Text = "SortingSystem";
 			// 
-			// pictureBox1
+			// Plane1
 			// 
-			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
-			this.pictureBox1.ImageLocation = "C:\\Users\\zbc23jakl\\source\\repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
+			this.Plane1.Cursor = System.Windows.Forms.Cursors.Cross;
+			this.Plane1.ImageLocation = "C:\\Users\\zbc23jakl\\source\\repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
     "_Assigment_Bagagesorteringssystem\\Views\\airplane.png";
-			this.pictureBox1.Location = new System.Drawing.Point(1065, 86);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 10;
-			this.pictureBox1.TabStop = false;
+			this.Plane1.Location = new System.Drawing.Point(1065, 86);
+			this.Plane1.Margin = new System.Windows.Forms.Padding(0);
+			this.Plane1.Name = "Plane1";
+			this.Plane1.Size = new System.Drawing.Size(200, 200);
+			this.Plane1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.Plane1.TabIndex = 10;
+			this.Plane1.TabStop = false;
 			// 
-			// pictureBox2
+			// Plane2
 			// 
-			this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Cross;
-			this.pictureBox2.ImageLocation = "C:\\Users\\zbc23jakl\\source\\repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
+			this.Plane2.Cursor = System.Windows.Forms.Cursors.Cross;
+			this.Plane2.ImageLocation = "C:\\Users\\zbc23jakl\\source\\repos\\DevNicklas\\H2_Assigment_Bagagesorteringssystem\\H2" +
     "_Assigment_Bagagesorteringssystem\\Views\\airplane.png";
-			this.pictureBox2.Location = new System.Drawing.Point(1065, 321);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(200, 200);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 11;
-			this.pictureBox2.TabStop = false;
+			this.Plane2.Location = new System.Drawing.Point(1065, 321);
+			this.Plane2.Margin = new System.Windows.Forms.Padding(0);
+			this.Plane2.Name = "Plane2";
+			this.Plane2.Size = new System.Drawing.Size(200, 200);
+			this.Plane2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.Plane2.TabIndex = 11;
+			this.Plane2.TabStop = false;
 			// 
-			// textBox1
+			// plane2TextBox
 			// 
-			this.textBox1.Location = new System.Drawing.Point(1282, 321);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 20);
-			this.textBox1.TabIndex = 12;
+			this.plane2TextBox.Location = new System.Drawing.Point(1282, 321);
+			this.plane2TextBox.Name = "plane2TextBox";
+			this.plane2TextBox.Size = new System.Drawing.Size(100, 20);
+			this.plane2TextBox.TabIndex = 12;
 			// 
-			// textBox2
+			// plane1TextBox
 			// 
-			this.textBox2.Location = new System.Drawing.Point(1282, 86);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(100, 20);
-			this.textBox2.TabIndex = 13;
+			this.plane1TextBox.Location = new System.Drawing.Point(1282, 86);
+			this.plane1TextBox.Name = "plane1TextBox";
+			this.plane1TextBox.Size = new System.Drawing.Size(100, 20);
+			this.plane1TextBox.TabIndex = 13;
 			// 
 			// MainForm
 			// 
@@ -393,12 +393,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1833, 913);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.plane1TextBox);
+			this.Controls.Add(this.plane2TextBox);
+			this.Controls.Add(this.Plane2);
+			this.Controls.Add(this.Plane1);
 			this.Controls.Add(this.panel25);
-			this.Controls.Add(this.listView1);
+			this.Controls.Add(this.sortingSystemListView);
 			this.Controls.Add(this.panel17);
 			this.Controls.Add(this.panel13);
 			this.Controls.Add(this.panel24);
@@ -415,20 +415,20 @@
 			this.Text = "Bagagesortertingssystem";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			this.panel5.ResumeLayout(false);
+			this.OpenSignCheckin1.ResumeLayout(false);
 			this.panel8.ResumeLayout(false);
 			this.panel8.PerformLayout();
-			this.panel9.ResumeLayout(false);
+			this.OpenSignCheckin2.ResumeLayout(false);
 			this.panel19.ResumeLayout(false);
 			this.panel19.PerformLayout();
-			this.panel20.ResumeLayout(false);
+			this.OpenSignTerminal2.ResumeLayout(false);
 			this.panel13.ResumeLayout(false);
 			this.panel13.PerformLayout();
-			this.panel14.ResumeLayout(false);
+			this.OpenSignTerminal1.ResumeLayout(false);
 			this.panel25.ResumeLayout(false);
 			this.panel25.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Plane1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.Plane2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -440,36 +440,36 @@
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel5;
+		private System.Windows.Forms.Panel OpenSignCheckin1;
 		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.Panel panel7;
 		private System.Windows.Forms.Panel panel8;
-		private System.Windows.Forms.Panel panel9;
+		private System.Windows.Forms.Panel OpenSignCheckin2;
 		private System.Windows.Forms.Panel panel10;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Panel panel11;
 		private System.Windows.Forms.Panel panel12;
 		private System.Windows.Forms.Panel panel18;
 		private System.Windows.Forms.Panel panel19;
-		private System.Windows.Forms.Panel panel20;
+		private System.Windows.Forms.Panel OpenSignTerminal2;
 		private System.Windows.Forms.Panel panel21;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Panel panel22;
 		private System.Windows.Forms.Panel panel23;
 		private System.Windows.Forms.Panel panel24;
 		private System.Windows.Forms.Panel panel13;
-		private System.Windows.Forms.Panel panel14;
+		private System.Windows.Forms.Panel OpenSignTerminal1;
 		private System.Windows.Forms.Panel panel15;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Panel panel16;
 		private System.Windows.Forms.Panel panel17;
-		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.ListView sortingSystemListView;
 		private System.Windows.Forms.Panel panel25;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.PictureBox Plane1;
+		private System.Windows.Forms.PictureBox Plane2;
+		private System.Windows.Forms.TextBox plane2TextBox;
+		private System.Windows.Forms.TextBox plane1TextBox;
 	}
 }
 
