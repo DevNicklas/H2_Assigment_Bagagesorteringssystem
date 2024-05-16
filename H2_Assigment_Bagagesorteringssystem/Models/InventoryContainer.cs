@@ -23,10 +23,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		}
 
 
-	internal InventoryContainer(int inventorySize)
-		{
-			this._inventorySize = inventorySize;
-		}
+		internal InventoryContainer(int inventorySize)
+			{
+				this._inventorySize = inventorySize;
+			}
 		/// <summary>
 		/// Add baggage to inventory
 		/// </summary>
