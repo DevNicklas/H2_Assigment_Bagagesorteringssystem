@@ -6,22 +6,26 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-    internal class Baggage
+    internal class CheckIn
     {
-        private float _weight = 0;
+        private bool _status = false;
 
-        internal Baggage()
-        {
-            Random rand = new Random();
-            _weight = rand.Next(0, 21);
-        }
-
-        internal float Weight
+        internal bool Status
         {
             get
             {
-                return _weight;
+                return _status;
             }
+        }
+
+        internal void Open()
+        {
+
+        }
+
+        internal void Close()
+        {
+
         }
     }
 }
