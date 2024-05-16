@@ -18,10 +18,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             }
         }
 
-        internal void ReceiveFromSorting(Baggage baggage)
-        {
-
-        }
 
         internal void Open()
         {
