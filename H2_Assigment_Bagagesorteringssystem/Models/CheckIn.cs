@@ -16,7 +16,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	{
         private bool _status = false;
 
-
         /// <summary>
         /// Gets the status of the check-in counter (open/closed).
         /// </summary>
@@ -30,7 +29,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
 		internal CheckIn(int inventorySize) : base(inventorySize) { }
 
-
         /// <summary>
         /// Opens the check-in counter.
         /// </summary>
@@ -39,7 +37,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             _status = true;
         }
 
-
         /// <summary>
         /// Closes the check-in counter.
         /// </summary>
@@ -47,7 +44,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         {
             _status = false;
         }
-
 
         /// <summary>
         /// Services a passenger by processing their baggage and sending it to the sorting system.
