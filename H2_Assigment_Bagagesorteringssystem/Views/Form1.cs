@@ -13,8 +13,6 @@ namespace H2_Assigment_Bagagesorteringssystem
 {
     public partial class MainForm : Form
     {
-        private Airport airport = new Airport("DinLufthavn", false);
-
         public MainForm()
         {
             InitializeComponent();

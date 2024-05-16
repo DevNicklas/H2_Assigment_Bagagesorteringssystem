@@ -7,22 +7,16 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Controllers
 {
-    internal class Airport
+    internal static class Airport
     {
-        private List<Terminal> _terminals;
-        private List<SortingSystem> _sortingSystems;
-        private List<CheckIn> _checkIns;
-        private List<Plane> _planes;
-        private string _name;
-        private bool _status;
+        private static List<Terminal> _terminals;
+        private static List<SortingSystem> _sortingSystems;
+        private static List<CheckIn> _checkIns;
+        private static List<Plane> _planes;
+        private static string _name = "DinLufthavn";
+        private static bool _status = false;
 
-        internal Airport(string name, bool status)
-        {
-            _name = name;
-            _status = status;
-        }
-
-        internal List<Terminal> Terminals
+        internal static List<Terminal> Terminals
         {
             get
             {
@@ -30,7 +24,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal List<SortingSystem> SortingSystems
+        internal static List<SortingSystem> SortingSystems
         {
             get
             {
@@ -38,7 +32,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal List<CheckIn> CheckIns
+        internal static List<CheckIn> CheckIns
         {
             get
             {
@@ -46,7 +40,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal List<Plane> Planes
+        internal static List<Plane> Planes
         {
             get
             {
@@ -54,7 +48,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal bool Status
+        internal static bool Status
         {
             get
             {
@@ -62,7 +56,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal void ChangeStatus()
+        internal static void ChangeStatus()
         {
             if(_status)
             {
@@ -74,21 +68,21 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal void AddPlane(int size)
+        internal static void AddPlane(int size)
         {
 			_planes.Add(new Plane(size));
 		}
-        internal void AddSortingSystem()
+        internal static void AddSortingSystem()
         {
             _sortingSystems.Add(new SortingSystem(1));
         }
 
-		internal void AddCheckIn()
+		internal static void AddCheckIn()
         {
 			_checkIns.Add(new CheckIn(1));
 		}
 
-        internal void AddTerminal()
+        internal static void AddTerminal()
         {
             _terminals.Add(new Terminal(1));
 		}

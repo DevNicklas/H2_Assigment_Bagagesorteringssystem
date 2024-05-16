@@ -14,8 +14,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
         internal void Sort(Baggage baggage)
         {
-            Airport.
-        }
+            foreach (Terminal terminal in Airport.Terminals)
+            {
+
+            }
+
+		}
         internal SortingSystem(int inventorySize) : base(inventorySize) { }
     }
 }
