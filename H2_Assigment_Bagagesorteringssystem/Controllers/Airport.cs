@@ -22,6 +22,46 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             _status = status;
         }
 
+        internal List<Terminal> Terminals
+        {
+            get
+            {
+                return _terminals;
+            }
+        }
+
+        internal List<SortingSystem> SortingSystems
+        {
+            get
+            {
+                return _sortingSystems;
+            }
+        }
+
+        internal List<CheckIn> CheckIns
+        {
+            get
+            {
+                return _checkIns;
+            }
+        }
+
+        internal List<Plane> Planes
+        {
+            get
+            {
+                return _planes;
+            }
+        }
+
+        internal bool Status
+        {
+            get
+            {
+                return _status;
+            }
+        }
+
         internal void ChangeStatus()
         {
             if(_status)
