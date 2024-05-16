@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-    internal class Plane
+    internal class Plane : InventoryContainer
     {
         private int _flightNumber = 0;
-    }
+
+		internal Plane(int inventorySize) : base(inventorySize) { }
+	}
+
 }

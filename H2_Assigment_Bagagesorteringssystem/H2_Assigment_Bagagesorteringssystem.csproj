@@ -51,6 +51,8 @@
     <Compile Include="Models\CheckIn.cs" />
     <Compile Include="Models\DataHandler.cs" />
     <Compile Include="Models\Passenger.cs" />
+    <Compile Include="Models\InventoryContainer.cs" />
+    <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\Plane.cs" />
     <Compile Include="Models\SortingSystem.cs" />
     <Compile Include="Models\Terminal.cs" />
