@@ -203,7 +203,7 @@
 			this.panel18.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.panel18.Location = new System.Drawing.Point(900, 483);
 			this.panel18.Name = "panel18";
-			this.panel18.Size = new System.Drawing.Size(141, 38);
+			this.panel18.Size = new System.Drawing.Size(162, 38);
 			this.panel18.TabIndex = 6;
 			// 
 			// panel19
@@ -317,7 +317,7 @@
 			this.panel17.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.panel17.Location = new System.Drawing.Point(900, 248);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(141, 38);
+			this.panel17.Size = new System.Drawing.Size(162, 38);
 			this.panel17.TabIndex = 8;
 			// 
 			// sortingSystemListView
