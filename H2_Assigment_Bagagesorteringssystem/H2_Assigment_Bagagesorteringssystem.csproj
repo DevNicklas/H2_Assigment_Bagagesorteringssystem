@@ -49,6 +49,7 @@
     <Compile Include="Controllers\Airport.cs" />
     <Compile Include="Models\Baggage.cs" />
     <Compile Include="Models\CheckIn.cs" />
+    <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\Plane.cs" />
     <Compile Include="Models\SortingSystem.cs" />
     <Compile Include="Models\Terminal.cs" />
