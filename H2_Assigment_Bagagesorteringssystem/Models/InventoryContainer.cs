@@ -9,7 +9,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	/// <summary>
 	/// Represents a container for managing a collection of baggage items.
 	/// </summary>
-	internal class InventoryContainer
+	abstract class InventoryContainer
 	{
 		protected List<Baggage> inventory;
 		private int _inventorySize;

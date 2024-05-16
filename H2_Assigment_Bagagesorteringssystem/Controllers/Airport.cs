@@ -38,8 +38,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
 			_planes.Add(new Plane(size));
 		}
+        internal void AddSortingSystem()
+        {
+            _sortingSystems.Add(new SortingSystem(1));
+        }
 
-        internal void AddCheckIn()
+		internal void AddCheckIn()
         {
 			_checkIns.Add(new CheckIn(1));
 		}
