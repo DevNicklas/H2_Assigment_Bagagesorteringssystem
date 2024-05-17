@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,8 +57,35 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 return _status;
             }
         }
+		internal static void RunAirport()
+		{
 
-        internal static bool ChangeStatus()
+            AddCheckIn();
+            AddTerminal();
+
+            Thread threadCheckin = new Thread();
+            Thread threadTerminal = new Thread(Terminal.);
+		}
+		internal static void RunCheckIn()
+		{
+			
+			while (true)
+            {
+                Baggage baggage = new Baggage();
+                checkIn.ServicePassenger(baggage);
+
+			}
+		}
+		internal static void RunTerminal()
+		{
+			Terminal Terminal = new Terminal(1);
+			while (true)
+			{
+
+			}
+		}
+
+		internal static bool ChangeStatus()
         {
             if(_status)
             {
@@ -69,10 +97,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
             return _status;
         }
-
         internal static void AddPlane(int size)
         {
-			//_planes.Add(new Plane(size));
+			_planes.Add(new Plane(50, "New York", 180, new DateTime(2024, 5, 17, 14, 30, 0));
 		}
         internal static void AddSortingSystem()
         {
