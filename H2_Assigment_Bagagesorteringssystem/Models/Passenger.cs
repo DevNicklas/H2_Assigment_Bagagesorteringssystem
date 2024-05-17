@@ -22,11 +22,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
         internal Passenger(string firstName, string lastName, string passportNumber, int flightId, string boardingPassNumber)
         {
-            this._firstName = firstName;
-            this._lastName = lastName;
-            this._passportNumber = passportNumber;
-            this._flightId = flightId;
-            this._boardingPassNumber = boardingPassNumber;
+            _firstName = firstName;
+            _lastName = lastName;
+            _passportNumber = passportNumber;
+            _flightId = flightId;
+            _boardingPassNumber = boardingPassNumber;
         }
     }
 }
