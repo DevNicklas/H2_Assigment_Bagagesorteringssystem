@@ -19,5 +19,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		{
 			get { return _baggageNumber; }
 		}
+		internal Tag(int flightNumber) 
+		{
+			_flightNumber = flightNumber;
+		}
 	}
 }
