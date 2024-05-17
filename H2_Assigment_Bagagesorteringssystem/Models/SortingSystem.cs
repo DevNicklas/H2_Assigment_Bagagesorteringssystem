@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using H2_Assigment_Bagagesorteringssystem;
 using H2_Assigment_Bagagesorteringssystem.Controllers;
@@ -11,6 +12,17 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
     internal class SortingSystem: InventoryContainer
     {
         private Queue<Baggage> inputQueue;
+
+
+		internal void Run()
+		{
+			while(true)
+			{
+				Sort(inputQueue.Dequeue());
+				Thread.Sleep(100);
+			}
+		}
+
 
 		/// <summary>
 		/// Sorts the given baggage to the appropriate terminal based on its flight number.
