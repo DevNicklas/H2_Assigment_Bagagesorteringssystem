@@ -1,4 +1,5 @@
 ﻿using H2_Assigment_Bagagesorteringssystem.Controllers;
+using H2_Assigment_Bagagesorteringssystem.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +13,10 @@ using System.Windows.Forms;
 using H2_Assigment_Bagagesorteringssystem.Models;
 namespace H2_Assigment_Bagagesorteringssystem
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IView
     {
+        public event EventHandler ChangeStatusBtnClicked;
+
         public MainForm()
         {
             Airport.RunAirport();
@@ -23,13 +26,13 @@ namespace H2_Assigment_Bagagesorteringssystem
 
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
-            if(Airport.ChangeStatus())
+        }
+
+        public void UpdateStatusLabel(bool status)
+        {
+            if(status)
             {
                 airportStatusLabel.Text = "Status: Open";
-            }
-            else
-            {
-                airportStatusLabel.Text = "Status: Closed";
             }
         }
     }

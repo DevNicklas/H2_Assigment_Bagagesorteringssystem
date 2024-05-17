@@ -1,4 +1,5 @@
-﻿using H2_Assigment_Bagagesorteringssystem.Models;
+﻿using H2_Assigment_Bagagesorteringssystem.Interfaces;
+using H2_Assigment_Bagagesorteringssystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		private static Queue<Baggage> _incomingBaggageQueue = new Queue<Baggage>();
 		private static string _name = "DinLufthavn";
         private static bool _status = false;
+
+        internal static event Action StatusChanged;
 
         internal static List<Terminal> Terminals
         {
@@ -151,8 +154,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				Simulator.RunSimulator();
 
 			}
-            return _status;
-        }
+			StatusChanged?.Invoke();
+		}
 
         internal static Plane AddPlane(int size)
         {
