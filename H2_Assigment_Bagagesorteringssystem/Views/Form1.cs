@@ -41,7 +41,7 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// <summary>
         /// Update view for airport status
         /// </summary>
-        public void UpdateAirportStatusLabel()
+        internal void UpdateAirportStatusLabel()
         {
             if (Airport.Status)
             {
@@ -58,7 +58,7 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// </summary>
         /// <param name="idx">The check-in index</param>
         /// <param name="status">Status of check-in</param>
-        public void UpdateCheckInSignStatus(sbyte idx, bool status)
+        internal void UpdateCheckInSignStatus(sbyte idx, bool status)
         {
             Panel signCheckInToUpdate = idx == 1 ? signCheckIn2 : signCheckIn1;
             signCheckInToUpdate.BackColor = status ? Color.Green : Color.Red;
@@ -69,7 +69,7 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// </summary>
         /// <param name="idx">The check-in index</param>
         /// <param name="status">Status of check-in</param>
-        public void UpdateTerminalSignStatus(sbyte idx, bool status)
+        internal void UpdateTerminalSignStatus(sbyte idx, bool status)
         {
             Panel signTerminalToUpdate = idx == 1 ? signTerminal2 : signTerminal1;
             signTerminalToUpdate.BackColor = status ? Color.Green : Color.Red;
