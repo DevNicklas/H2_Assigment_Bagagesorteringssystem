@@ -21,6 +21,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
 
         private void OnAiportStatusBtnClicked(object sender, EventArgs e)
         {
+            Console.WriteLine("Hej");
             _view.UpdateStatusLabel(Airport.Status);
         }
     }

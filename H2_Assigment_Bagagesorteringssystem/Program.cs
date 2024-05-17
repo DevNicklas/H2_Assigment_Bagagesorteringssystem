@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using H2_Assigment_Bagagesorteringssystem.Models;
+using H2_Assigment_Bagagesorteringssystem.Views;
 
 namespace H2_Assigment_Bagagesorteringssystem
 {
@@ -22,6 +23,9 @@ namespace H2_Assigment_Bagagesorteringssystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm mainForm = new MainForm();
+
+            MainPresenter mainPresenter = new MainPresenter(mainForm);
+            
             Application.Run(mainForm);
 
 
