@@ -8,14 +8,25 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 {
     internal class Passenger
     {
-        private string firstName = "Undefined";
-        private string lastName = "Undefined";
-        private string passportNumber = "Undefined";
-        private string boardingPassNumber = "Undefined";
+        private string _firstName;
+        private string _lastName;
+        private string _passportNumber;
+        private int _flightId;
+        private string _boardingPassNumber;
 
-        internal Passenger()
+        public string FirstName { get { return _firstName; } }
+        public string LastName { get { return _lastName; } }
+        public string PassportNumber { get { return _passportNumber; } }
+        public int FlightId { get { return _flightId; } }
+        public string BoardingPassNumber { get { return _boardingPassNumber; } }
+
+        internal Passenger(string firstName, string lastName, string passportNumber, int flightId, string boardingPassNumber)
         {
-
+            this._firstName = firstName;
+            this._lastName = lastName;
+            this._passportNumber = passportNumber;
+            this._flightId = flightId;
+            this._boardingPassNumber = boardingPassNumber;
         }
     }
 }
