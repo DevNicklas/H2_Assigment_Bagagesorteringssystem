@@ -19,10 +19,11 @@ namespace H2_Assigment_Bagagesorteringssystem
 
         public MainForm()
         {
-            Airport.RunAirport();
+			
 
 			InitializeComponent();
-        }
+			
+		}
 
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
