@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using H2_Assigment_Bagagesorteringssystem.Models;
 
 namespace H2_Assigment_Bagagesorteringssystem
 {
@@ -14,9 +16,15 @@ namespace H2_Assigment_Bagagesorteringssystem
         [STAThread]
         static void Main()
         {
+            DataHandler.DatahandlerTest();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm mainForm = new MainForm();
+            Application.Run(mainForm);
+
+
         }
     }
 }
