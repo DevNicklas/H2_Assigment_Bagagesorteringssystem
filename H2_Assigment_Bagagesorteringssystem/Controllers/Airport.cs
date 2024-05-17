@@ -90,13 +90,15 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 		private static void StartThreads()
 		{
-			var threadCheckin = new Thread(RunCheckIn);
-			var threadTerminal = new Thread(RunTerminal);
-			var threadSort = new Thread(_sortingSystems[0].StartSystem);
+			Thread threadCheckin = new Thread(RunCheckIn);
+			Thread threadTerminal = new Thread(RunTerminal);
+			Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
+			Thread threadSim = new Thread(Simulator.RunSimulator);
 
 			threadCheckin.Start();
 			threadTerminal.Start();
 			threadSort.Start();
+			threadSim.Start();
 		}
 		internal static void RunCheckIn()
 		{
@@ -151,8 +153,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             else
             {
                 _status = true;
-				Simulator.RunSimulator();
-
 			}
 			StatusChanged?.Invoke();
 		}
