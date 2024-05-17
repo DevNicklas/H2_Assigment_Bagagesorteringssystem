@@ -75,7 +75,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				AddCheckIn();
 				AddTerminal();
 			}
-			
 			AddSortingSystem();
 
 
