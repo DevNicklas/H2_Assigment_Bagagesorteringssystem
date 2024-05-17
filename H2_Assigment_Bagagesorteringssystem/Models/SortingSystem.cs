@@ -55,16 +55,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         }
 
 
-		internal void Run()
-		{
-			while(true)
-			{
-				Sort(inputQueue.Dequeue());
-				Thread.Sleep(100);
-			}
-		}
-
-
 		/// <summary>
 		/// Sorts the given baggage to the appropriate terminal based on its flight number.
 		/// If the baggage cannot be sorted to any terminal, it is enqueued in the input queue.
