@@ -11,7 +11,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 {
     internal class SortingSystem: InventoryContainer
     {
-        private Queue<Baggage> _inputQueue;
+        private Queue<Baggage> _inputQueue = new Queue<Baggage>();
         private readonly object _lock = new object(); // Lock object for synchronization
         /// <summary>
         /// Initiates the baggage sorting system and begins processing incoming baggage.

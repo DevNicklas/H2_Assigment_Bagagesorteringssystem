@@ -55,7 +55,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             if (!_status) return false;
 
             this.AddToInventory(baggage);
-            Thread.Sleep(100); // Simulate processing time
             SendBaggageToSortingSystem();
             return true;
         }

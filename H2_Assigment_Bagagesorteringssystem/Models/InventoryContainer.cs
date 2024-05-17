@@ -11,7 +11,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	/// </summary>
 	abstract class InventoryContainer
 	{
-		protected List<Baggage> inventory;
+		protected List<Baggage> inventory = new List<Baggage>();
 		private int _inventorySize;
 
 		internal int InventorySize 
