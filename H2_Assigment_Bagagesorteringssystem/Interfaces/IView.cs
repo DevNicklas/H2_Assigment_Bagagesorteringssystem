@@ -9,9 +9,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Interfaces
 {
     internal interface IView
     {
-        event EventHandler ChangeStatusBtnClicked;
-
-        void UpdateAirportStatusLabel(bool status);
-        void UpdateCheckIn(bool status);
+        void UpdateAirportStatusLabel();
+        void UpdateCheckInSignStatus(sbyte idx, bool status);
+        void UpdateTerminalSignStatus(sbyte idx, bool status);
     }
 }

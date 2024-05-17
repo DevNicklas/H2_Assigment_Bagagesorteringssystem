@@ -66,16 +66,19 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 return _status;
             }
         }
+
+		internal static void InitializeAirport()
+		{
+            for (int i = 0; i < 2; i++)
+            {
+                AddCheckIn();
+                AddTerminal();
+            }
+            AddSortingSystem();
+        }
+
         internal static void RunAirport()
         {
-			for (int i = 0; i < 2; i++)
-			{
-				AddCheckIn();
-				AddTerminal();
-			}
-			AddSortingSystem();
-
-
 			// Initialize and start the threads for check-in, terminal, and sorting systems
 			StartThreads();
 

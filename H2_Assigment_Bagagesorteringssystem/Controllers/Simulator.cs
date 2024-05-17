@@ -22,7 +22,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 					// If there is no plane at the terminal, add a new plane
 					if (terminal.Plane == null)
 					{
-						terminal.Plane = Airport.AddPlane(100);
+						terminal.Plane = Airport.AddPlane(10);
 						terminal.Open();
 						for (int i = 0; i < terminal.Plane.InventorySize; i++)
 						{

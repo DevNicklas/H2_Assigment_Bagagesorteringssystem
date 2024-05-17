@@ -58,8 +58,8 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.Plane1 = new System.Windows.Forms.PictureBox();
-            this.Plane2 = new System.Windows.Forms.PictureBox();
+            this.planeImage1 = new System.Windows.Forms.PictureBox();
+            this.planeImage2 = new System.Windows.Forms.PictureBox();
             this.plane2TextBox = new System.Windows.Forms.TextBox();
             this.plane1TextBox = new System.Windows.Forms.TextBox();
             this.sortingSystemQueue = new System.Windows.Forms.ListBox();
@@ -74,8 +74,8 @@
             this.panel13.SuspendLayout();
             this.signTerminal1.SuspendLayout();
             this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Plane1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Plane2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planeImage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planeImage2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -340,31 +340,31 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "SortingSystem";
             // 
-            // Plane1
+            // planeImage1
             // 
-            this.Plane1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Plane1.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
-            this.Plane1.Location = new System.Drawing.Point(1065, 86);
-            this.Plane1.Margin = new System.Windows.Forms.Padding(0);
-            this.Plane1.Name = "Plane1";
-            this.Plane1.Size = new System.Drawing.Size(200, 200);
-            this.Plane1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Plane1.TabIndex = 10;
-            this.Plane1.TabStop = false;
-            this.Plane1.Visible = false;
+            this.planeImage1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.planeImage1.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+            this.planeImage1.Location = new System.Drawing.Point(1065, 86);
+            this.planeImage1.Margin = new System.Windows.Forms.Padding(0);
+            this.planeImage1.Name = "planeImage1";
+            this.planeImage1.Size = new System.Drawing.Size(200, 200);
+            this.planeImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.planeImage1.TabIndex = 10;
+            this.planeImage1.TabStop = false;
+            this.planeImage1.Visible = false;
             // 
-            // Plane2
+            // planeImage2
             // 
-            this.Plane2.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Plane2.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
-            this.Plane2.Location = new System.Drawing.Point(1065, 321);
-            this.Plane2.Margin = new System.Windows.Forms.Padding(0);
-            this.Plane2.Name = "Plane2";
-            this.Plane2.Size = new System.Drawing.Size(200, 200);
-            this.Plane2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Plane2.TabIndex = 11;
-            this.Plane2.TabStop = false;
-            this.Plane2.Visible = false;
+            this.planeImage2.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.planeImage2.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+            this.planeImage2.Location = new System.Drawing.Point(1065, 321);
+            this.planeImage2.Margin = new System.Windows.Forms.Padding(0);
+            this.planeImage2.Name = "planeImage2";
+            this.planeImage2.Size = new System.Drawing.Size(200, 200);
+            this.planeImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.planeImage2.TabIndex = 11;
+            this.planeImage2.TabStop = false;
+            this.planeImage2.Visible = false;
             // 
             // plane2TextBox
             // 
@@ -422,8 +422,8 @@
             this.Controls.Add(this.sortingSystemQueue);
             this.Controls.Add(this.plane1TextBox);
             this.Controls.Add(this.plane2TextBox);
-            this.Controls.Add(this.Plane2);
-            this.Controls.Add(this.Plane1);
+            this.Controls.Add(this.planeImage2);
+            this.Controls.Add(this.planeImage1);
             this.Controls.Add(this.panel25);
             this.Controls.Add(this.panel17);
             this.Controls.Add(this.panel13);
@@ -453,8 +453,8 @@
             this.signTerminal1.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Plane1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Plane2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planeImage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.planeImage2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,8 +491,8 @@
 		private System.Windows.Forms.Panel panel17;
 		private System.Windows.Forms.Panel panel25;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.PictureBox Plane1;
-		private System.Windows.Forms.PictureBox Plane2;
+		private System.Windows.Forms.PictureBox planeImage1;
+		private System.Windows.Forms.PictureBox planeImage2;
 		private System.Windows.Forms.TextBox plane2TextBox;
 		private System.Windows.Forms.TextBox plane1TextBox;
         private System.Windows.Forms.ListBox sortingSystemQueue;

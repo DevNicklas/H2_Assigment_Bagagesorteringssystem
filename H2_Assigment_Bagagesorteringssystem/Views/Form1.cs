@@ -15,35 +15,78 @@ namespace H2_Assigment_Bagagesorteringssystem
 {
     public partial class MainForm : Form, IView
     {
-        public event EventHandler ChangeStatusBtnClicked;
 
         public MainForm()
         {
-			InitializeComponent();
-		}
-
-        private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
-        {
-            ChangeStatusBtnClicked?.Invoke(this, EventArgs.Empty);
+            InitializeComponent();
         }
 
-        public void UpdateAirportStatusLabel(bool status)
+        /// <summary>
+        /// Handles the click event of the toggleAirportStatusBtn button.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">An EventArgs that contains the event data.</param>
+        private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
-            if(status)
+            // Check if the airport is currently not running
+            if (!Airport.Status)
+            {
+                Airport.RunAirport();
+
+                // Update the status label to reflect the change
+                UpdateAirportStatusLabel();
+            }
+        }
+
+        /// <summary>
+        /// Update view for airport status
+        /// </summary>
+        public void UpdateAirportStatusLabel()
+        {
+            if (Airport.Status)
             {
                 airportStatusLabel.Text = "Status: Open";
             }
+            else
+            {
+                airportStatusLabel.Text = "Status: Closed";
+            }
         }
 
-        public void UpdateCheckIn(bool status)
+        /// <summary>
+        /// Update view for the status sign of a check-in
+        /// </summary>
+        /// <param name="idx">The check-in index</param>
+        /// <param name="status">Status of check-in</param>
+        public void UpdateCheckInSignStatus(sbyte idx, bool status)
         {
-            if(status)
+            Panel signCheckInToUpdate = idx == 1 ? signCheckIn2 : signCheckIn1;
+            signCheckInToUpdate.BackColor = status ? Color.Green : Color.Red;
+        }
+
+        /// <summary>
+        /// Update view for the status sign of a terminal
+        /// </summary>
+        /// <param name="idx">The check-in index</param>
+        /// <param name="status">Status of check-in</param>
+        public void UpdateTerminalSignStatus(sbyte idx, bool status)
+        {
+            Panel signTerminalToUpdate = idx == 1 ? signTerminal2 : signTerminal1;
+            signTerminalToUpdate.BackColor = status ? Color.Green : Color.Red;
+
+            PictureBox planeImageToUpdate = idx == 1 ? planeImage2 : planeImage1;
+
+            // Invoke the update of planeImage1.Visible on the UI thread
+            if (planeImageToUpdate.InvokeRequired)
             {
-                signCheckIn1.BackColor = Color.Green;
+                planeImageToUpdate.Invoke((MethodInvoker)delegate
+                {
+                    planeImageToUpdate.Visible = status;
+                });
             }
             else
             {
-                signCheckIn1.BackColor = Color.Red;
+                planeImageToUpdate.Visible = status;
             }
         }
     }

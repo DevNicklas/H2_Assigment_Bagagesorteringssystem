@@ -17,7 +17,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	{
         private bool _status = false;
 
-        internal event Action StatusChanged;
+        internal event EventHandler CheckInStatusChanged;
 
         /// <summary>
         /// Gets the status of the check-in counter (open/closed).
@@ -38,7 +38,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		internal void Open()
         {
             _status = true;
-			StatusChanged?.Invoke();
+            CheckInStatusChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         internal void Close()
         {
 			_status = false;
-			StatusChanged?.Invoke();
+            CheckInStatusChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>

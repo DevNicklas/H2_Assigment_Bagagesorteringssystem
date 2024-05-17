@@ -12,6 +12,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         private bool _status = false;
         private Plane _plane;
 
+        internal event EventHandler TerminalStatusChanged;
+
         internal bool Status
         {
             get { return _status; }
@@ -29,12 +31,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		internal void Open()
 		{
 			_status = true;
-		}
+            TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
+        }
 
 		internal void Close()
 		{
 			_status = false;
-		}
+            TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
+        }
 
         internal void SendBaggageToPlane()
         {

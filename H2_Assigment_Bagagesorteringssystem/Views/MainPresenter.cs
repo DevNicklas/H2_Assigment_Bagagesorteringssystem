@@ -16,16 +16,21 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
         {
             _view = view;
 
-            _view.ChangeStatusBtnClicked += OnAiportStatusBtnClicked;
+            Airport.CheckIns[0].CheckInStatusChanged += (sender, e) => OnCheckInStatusUpdate(0);
+            Airport.CheckIns[1].CheckInStatusChanged += (sender, e) => OnCheckInStatusUpdate(1);
+
+            Airport.Terminals[0].TerminalStatusChanged += (sender, e) => OnTerminalStatusUpdate(0);
+            Airport.Terminals[1].TerminalStatusChanged += (sender, e) => OnTerminalStatusUpdate(1);
         }
 
-        private void OnAiportStatusBtnClicked(object sender, EventArgs e)
+        private void OnCheckInStatusUpdate(sbyte idx)
         {
-            _view.UpdateAirportStatusLabel(Airport.Status);
+            _view.UpdateCheckInSignStatus(idx, Airport.CheckIns[idx].Status);
         }
 
-        private void OnCheckInUpdate()
+        private void OnTerminalStatusUpdate(sbyte idx)
         {
+            _view.UpdateTerminalSignStatus(idx, Airport.Terminals[idx].Status);
         }
     }
 }
