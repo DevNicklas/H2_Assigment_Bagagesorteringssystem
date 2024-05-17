@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace H2_Assigment_Bagagesorteringssystem.Interfaces
 {
@@ -10,6 +11,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Interfaces
     {
         event EventHandler ChangeStatusBtnClicked;
 
-        void UpdateStatusLabel(bool status);
+        void UpdateAirportStatusLabel(bool status);
+        void UpdateCheckIn(bool status);
     }
 }

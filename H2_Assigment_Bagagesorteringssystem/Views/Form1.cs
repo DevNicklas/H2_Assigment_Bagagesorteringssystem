@@ -19,10 +19,7 @@ namespace H2_Assigment_Bagagesorteringssystem
 
         public MainForm()
         {
-			
-
 			InitializeComponent();
-			
 		}
 
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
@@ -30,11 +27,23 @@ namespace H2_Assigment_Bagagesorteringssystem
             ChangeStatusBtnClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        public void UpdateStatusLabel(bool status)
+        public void UpdateAirportStatusLabel(bool status)
         {
             if(status)
             {
                 airportStatusLabel.Text = "Status: Open";
+            }
+        }
+
+        public void UpdateCheckIn(bool status)
+        {
+            if(status)
+            {
+                signCheckIn1.BackColor = Color.Green;
+            }
+            else
+            {
+                signCheckIn1.BackColor = Color.Red;
             }
         }
     }

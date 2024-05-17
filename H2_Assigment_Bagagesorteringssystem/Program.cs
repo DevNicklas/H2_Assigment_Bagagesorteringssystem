@@ -24,8 +24,8 @@ namespace H2_Assigment_Bagagesorteringssystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm mainForm = new MainForm();
-			
-			MainPresenter mainPresenter = new MainPresenter(mainForm);
+			new MainPresenter(mainForm);
+
 			Airport.RunAirport();
 			Application.Run(mainForm);
 			

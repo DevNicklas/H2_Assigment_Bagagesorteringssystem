@@ -20,8 +20,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		private static string _name = "DinLufthavn";
         private static bool _status = false;
 
-        internal static event Action StatusChanged;
-
         internal static List<Terminal> Terminals
         {
             get
@@ -154,7 +152,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             {
                 _status = true;
 			}
-			StatusChanged?.Invoke();
 		}
 
         internal static Plane AddPlane(int size)
