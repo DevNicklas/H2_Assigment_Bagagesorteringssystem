@@ -70,11 +70,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         }
         internal static void RunAirport()
         {
-            AddCheckIn();
-			AddCheckIn();
-			AddTerminal();
-			AddTerminal();
-			AddTerminal();
+			for (int i = 0; i < 2; i++)
+			{
+				AddCheckIn();
+				AddTerminal();
+			}
+			
 			AddSortingSystem();
 
 
