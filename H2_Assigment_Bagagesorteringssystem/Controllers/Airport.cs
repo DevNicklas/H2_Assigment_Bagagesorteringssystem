@@ -71,21 +71,24 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         internal static void RunAirport()
         {
             AddCheckIn();
-            AddTerminal();
-            AddSortingSystem();
+			AddCheckIn();
+			AddTerminal();
+			AddTerminal();
+			AddTerminal();
+			AddSortingSystem();
 
-			foreach (CheckIn checkIn in _checkIns)
-			{
-				checkIn.Open();
-			}
 
 			// Initialize and start the threads for check-in, terminal, and sorting systems
 			StartThreads();
 
             ChangeStatus();
 
+			foreach (CheckIn checkIn in _checkIns)
+			{
+				checkIn.Open();
+			}
 
-			
+
 		}
 
 		private static void StartThreads()
@@ -163,7 +166,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         internal static Plane AddPlane(int size)
         {
 			Random random = new Random();
-			Plane plane = new Plane(random.Next(0, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
+			Plane plane = new Plane(random.Next(5, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
 			_planes.Add(plane);
             return plane;
 		}

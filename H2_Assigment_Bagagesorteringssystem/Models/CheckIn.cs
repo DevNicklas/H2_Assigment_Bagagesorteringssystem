@@ -37,7 +37,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// </summary>
 		internal void Open()
         {
-            StatusChanged?.Invoke();
+            _status = true;
+			StatusChanged?.Invoke();
         }
 
         /// <summary>
@@ -45,7 +46,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// </summary>
         internal void Close()
         {
-            StatusChanged?.Invoke();
+			_status = false;
+			StatusChanged?.Invoke();
         }
 
         /// <summary>
