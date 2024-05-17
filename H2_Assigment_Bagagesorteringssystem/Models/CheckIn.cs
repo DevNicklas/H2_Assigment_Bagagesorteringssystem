@@ -10,6 +10,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	{
         private bool _status = false;
 
+        internal event Action StatusChanged;
+
         internal bool Status
         {
             get
@@ -22,12 +24,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
 		internal void Open()
         {
-
+            StatusChanged?.Invoke();
         }
 
         internal void Close()
         {
-
+            StatusChanged?.Invoke();
         }
     }
 }

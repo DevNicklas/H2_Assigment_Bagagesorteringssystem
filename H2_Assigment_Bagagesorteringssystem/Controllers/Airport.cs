@@ -1,4 +1,5 @@
-﻿using H2_Assigment_Bagagesorteringssystem.Models;
+﻿using H2_Assigment_Bagagesorteringssystem.Interfaces;
+using H2_Assigment_Bagagesorteringssystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         private static List<Plane> _planes;
         private static string _name = "DinLufthavn";
         private static bool _status = false;
+
+        internal static event Action StatusChanged;
 
         internal static List<Terminal> Terminals
         {
@@ -57,18 +60,17 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal static void ChangeStatus(Label statusLabel)
+        internal static void ChangeStatus()
         {
             if(_status)
             {
                 _status = false;
-                statusLabel.Text = "Status: Closed";
             }
             else
             {
                 _status = true;
-                statusLabel.Text = "Status: Open";
             }
+            StatusChanged?.Invoke();
         }
 
         internal static void AddPlane(int size)
