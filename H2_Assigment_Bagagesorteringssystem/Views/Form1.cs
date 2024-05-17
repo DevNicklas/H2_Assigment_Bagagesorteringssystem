@@ -27,6 +27,7 @@ namespace H2_Assigment_Bagagesorteringssystem
 
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
+            ChangeStatusBtnClicked?.Invoke(this, EventArgs.Empty);
         }
 
         public void UpdateStatusLabel(bool status)
