@@ -10,7 +10,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
     {
         private float _weight = 0;
 
-        internal Baggage()
+        internal Baggage(int flightNumber) : base(flightNumber)
         {
             Random rand = new Random();
             _weight = rand.Next(0, 21);

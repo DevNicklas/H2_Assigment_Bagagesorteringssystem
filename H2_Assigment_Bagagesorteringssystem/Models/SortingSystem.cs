@@ -11,7 +11,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 {
     internal class SortingSystem: InventoryContainer
     {
-        private Queue<Baggage> _inputQueue;
+        private Queue<Baggage> _inputQueue = new Queue<Baggage>();
         private readonly object _lock = new object(); // Lock object for synchronization
         /// <summary>
         /// Initiates the baggage sorting system and begins processing incoming baggage.
@@ -54,12 +54,13 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             _inputQueue.Enqueue(baggage);
         }
 
-        /// <summary>
-        /// Sorts the given baggage to the appropriate terminal based on its flight number.
-        /// If the baggage cannot be sorted to any terminal, it is enqueued in the input queue.
-        /// </summary>
-        /// <param name="baggage">The baggage to be sorted.</param>
-        internal void Sort(Baggage baggage)
+
+		/// <summary>
+		/// Sorts the given baggage to the appropriate terminal based on its flight number.
+		/// If the baggage cannot be sorted to any terminal, it is enqueued in the input queue.
+		/// </summary>
+		/// <param name="baggage">The baggage to be sorted.</param>
+		internal void Sort(Baggage baggage)
 		{
 			foreach (Terminal terminal in Airport.Terminals)
 			{

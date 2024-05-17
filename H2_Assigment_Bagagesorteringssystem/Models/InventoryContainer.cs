@@ -11,9 +11,17 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	/// </summary>
 	abstract class InventoryContainer
 	{
-		protected List<Baggage> inventory;
+		private List<Baggage> _inventory = new List<Baggage>();
 		private int _inventorySize;
 
+
+		internal List<Baggage> Inventory
+		{
+			get
+			{
+				return _inventory;
+			}
+		}
 		internal int InventorySize 
 		{
             get
@@ -34,9 +42,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		/// <returns></returns>
 		internal bool AddToInventory(Baggage baggage)
 		{
-			if(_inventorySize > inventory.Count)
+			if(_inventorySize > Inventory.Count)
 			{ 
-				inventory.Add(baggage); 
+				Inventory.Add(baggage); 
 				return true; // Return true to indicate successful addition
 			}
 			return false; // Return false if inventory is full
@@ -47,10 +55,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		/// <returns></returns>
 		internal Baggage RemoveFromInventory()
 		{
-			if (inventory.Count > 0)
+			if (Inventory.Count > 0)
 			{
-				Baggage baggage = inventory.First();
-				inventory.Remove(baggage);
+				Baggage baggage = Inventory.First();
+				Inventory.Remove(baggage);
 				return baggage;
 			}
 			return null;

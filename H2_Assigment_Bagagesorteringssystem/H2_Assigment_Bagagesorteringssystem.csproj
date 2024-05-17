@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Airport.cs" />
+    <Compile Include="Controllers\Simulator.cs" />
+    <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Models\Baggage\Baggage.cs" />
     <Compile Include="Models\CheckIn.cs" />
     <Compile Include="Models\DataHandler.cs" />
@@ -71,6 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MainPresenter.cs" />
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
