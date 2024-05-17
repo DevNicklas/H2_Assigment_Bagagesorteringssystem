@@ -50,8 +50,15 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 return _planes;
             }
         }
+		internal static Queue<Baggage> IncomingBaggageQueue
+		{
+			get
+			{
+				return _incomingBaggageQueue;
+			}
+		}
 
-        internal static bool Status
+		internal static bool Status
         {
             get
             {
@@ -75,31 +82,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             ChangeStatus();
 
 
-			while (_status)
-            {
-                foreach (Terminal terminal in _terminals)
-                {
-                    if (terminal.Plane == null)
-                    {
-                        terminal.Plane = AddPlane(100);
-                        terminal.Open();
-                        for (int i = 0; i < 100; i++)
-                        {
-                            _incomingBaggageQueue.Enqueue(new Baggage(terminal.Plane.FlightNumber));
-                        }
-                    }
-
-                    else
-                    {
-						if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
-                        {
-							terminal.Close();
-                            terminal.Plane = null;
-						}
-					}
-				}
-                Thread.Sleep(2000);
-			};
+			
 		}
 
 		private static void StartThreads()
@@ -165,13 +148,16 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             else
             {
                 _status = true;
-            }
+				Simulator.RunSimulator();
+
+			}
             return _status;
         }
 
         internal static Plane AddPlane(int size)
         {
-            Plane plane = new Plane(50, "New York", 180, new DateTime(2024, 5, 17, 14, 30, 0));
+			Random random = new Random();
+			Plane plane = new Plane(random.Next(0, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
 			_planes.Add(plane);
             return plane;
 		}
