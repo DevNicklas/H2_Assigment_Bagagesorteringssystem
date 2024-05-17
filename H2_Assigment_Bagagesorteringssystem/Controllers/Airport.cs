@@ -93,12 +93,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			Thread threadCheckin = new Thread(RunCheckIn);
 			Thread threadTerminal = new Thread(RunTerminal);
 			Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
-			Thread threadSim = new Thread(Simulator.RunSimulator);
+			
 
 			threadCheckin.Start();
 			threadTerminal.Start();
 			threadSort.Start();
-			threadSim.Start();
+			
 		}
 		internal static void RunCheckIn()
 		{
@@ -123,7 +123,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 						lock (checkIn)
 						{
 							checkIn.ServicePassenger(baggage);
-							Thread.Sleep(100); // Simulate processing time
+							Thread.Sleep(200); // Simulate processing time
 						}
 					}
 				}
@@ -139,20 +139,23 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                     if (terminal.InventorySize > 0)
                     {
                         terminal.SendBaggageToPlane();
-                    }
+						Thread.Sleep(200); // Simulate processing time
+					}
                 }
             }
 		}
 
 		internal static void ChangeStatus()
         {
-            if(_status)
+            if (_status)
             {
                 _status = false;
             }
             else
             {
                 _status = true;
+				Thread threadSim = new Thread(Simulator.RunSimulator);
+				threadSim.Start();
 			}
 			StatusChanged?.Invoke();
 		}

@@ -26,13 +26,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 						}
 					}
 
-					else
+					else if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
 					{
-						if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
-						{
-							terminal.Close();
-							terminal.Plane = null;
-						}
+						terminal.Close();
+						terminal.Plane = null;
 					}
 				}
 				Thread.Sleep(2000);
