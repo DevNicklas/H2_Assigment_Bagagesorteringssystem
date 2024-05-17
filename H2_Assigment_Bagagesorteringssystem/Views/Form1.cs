@@ -31,10 +31,10 @@ namespace H2_Assigment_Bagagesorteringssystem
             // Check if the airport is currently not running
             if (!Airport.Status)
             {
-                Airport.RunAirport();
+                Airport.ChangeStatus();
 
-                // Update the status label to reflect the change
-                UpdateAirportStatusLabel();
+				// Update the status label to reflect the change
+				UpdateAirportStatusLabel();
             }
         }
 

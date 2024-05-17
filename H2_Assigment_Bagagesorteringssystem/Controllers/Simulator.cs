@@ -8,41 +8,78 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Controllers
 {
+	/// <summary>
+	/// Represents a static simulator for the airport baggage sorting system.
+	/// </summary>
 	internal static class Simulator
 	{
+		private const int TerminalCheckInterval = 2000;
+		private const int SimulationCycleInterval = 10000;
+
 		/// <summary>
-		/// Running the airport simulator
+		/// Runs the airport simulator.
 		/// </summary>
-		public static void RunSimulator() 
+		public static void RunSimulator()
 		{
 			while (Airport.Status)
 			{
-				foreach (Terminal terminal in Airport.Terminals)
+				foreach (var terminal in Airport.Terminals)
 				{
-					// If there is no plane at the terminal, add a new plane
-					if (terminal.Plane == null)
-					{
-						terminal.Plane = Airport.AddPlane(10);
-						terminal.Open();
-						for (int i = 0; i < terminal.Plane.InventorySize; i++)
-						{
-							Airport.IncomingBaggageQueue.Enqueue(new Baggage(terminal.Plane.FlightNumber));
-						}
-					}
-
-					// If the plane's inventory is full, close the terminal and remove the plane
-					else if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
-					{
-						// Close the terminal after processing is complete
-						terminal.Close();
-						// Remove the plane from the terminal
-						terminal.Plane = null;
-					}
-					Thread.Sleep(2000);
+					ProcessTerminal(terminal);
 				}
-				Thread.Sleep(10000);
-
-			};
+				Thread.Sleep(SimulationCycleInterval);
+			}
 		}
+
+		/// <summary>
+		/// Processes a terminal by either assigning a new plane or closing it if the plane is full.
+		/// </summary>
+		/// <param name="terminal">The terminal to be processed.</param>
+		private static void ProcessTerminal(Terminal terminal)
+		{
+			if (terminal.Plane == null)
+			{
+				AssignNewPlaneToTerminal(terminal);
+			}
+			else if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
+			{
+				CloseTerminalAndRemovePlane(terminal);
+			}
+			Thread.Sleep(TerminalCheckInterval);
+		}
+
+		/// <summary>
+		/// Assigns a new plane to the terminal and enqueues its baggage.
+		/// </summary>
+		/// <param name="terminal">The terminal to which a new plane is assigned.</param>
+		private static void AssignNewPlaneToTerminal(Terminal terminal)
+		{
+			Plane incomingPlane = GetRandomPlane();
+			terminal.Plane = incomingPlane;
+			GenerateNewBaggage(incomingPlane);
+			terminal.Open();
+		}
+		private static Plane GetRandomPlane()
+		{
+			return Airport.AddPlane(100);
+		}
+		private static void GenerateNewBaggage(Plane plane)
+		{
+			for (int i = 0; i < plane.InventorySize; i++)
+			{
+				Airport.IncomingBaggageQueue.Enqueue(new Baggage(plane.FlightNumber));
+			}
+		}
+
+		/// <summary>
+		/// Closes the terminal and removes the plane from it.
+		/// </summary>
+		/// <param name="terminal">The terminal to be closed.</param>
+		private static void CloseTerminalAndRemovePlane(Terminal terminal)
+		{
+			terminal.Close();
+			terminal.Plane = null;
+		}
+
 	}
 }
