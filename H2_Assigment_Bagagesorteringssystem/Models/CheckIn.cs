@@ -38,6 +38,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		internal void Open()
         {
             StatusChanged?.Invoke();
+        }
+
         /// <summary>
         /// Closes the check-in counter.
         /// </summary>

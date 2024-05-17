@@ -159,7 +159,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
 		}
 
-		internal static bool ChangeStatus()
+		internal static void ChangeStatus()
         {
             if(_status)
             {
