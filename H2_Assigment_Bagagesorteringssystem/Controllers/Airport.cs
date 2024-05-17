@@ -57,23 +57,22 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-        internal static void ChangeStatus(Label statusLabel)
+        internal static bool ChangeStatus()
         {
             if(_status)
             {
                 _status = false;
-                statusLabel.Text = "Status: Closed";
             }
             else
             {
                 _status = true;
-                statusLabel.Text = "Status: Open";
             }
+            return _status;
         }
 
         internal static void AddPlane(int size)
         {
-			_planes.Add(new Plane(size));
+			//_planes.Add(new Plane(size));
 		}
         internal static void AddSortingSystem()
         {

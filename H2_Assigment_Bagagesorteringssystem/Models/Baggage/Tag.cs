@@ -9,7 +9,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	internal class Tag 
 	{
 		private int _flightNumber;
-		private string _bagageNumber;
+		private string _baggageNumber;
 
 		internal int FlightNumber
 		{
@@ -17,7 +17,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		}
 		internal string BagageNumber
 		{
-			get { return _bagageNumber; }
+			get { return _baggageNumber; }
 		}
 	}
 }

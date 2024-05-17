@@ -33,25 +33,25 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.checkIn1Label = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.OpenSignCheckin1 = new System.Windows.Forms.Panel();
+            this.signCheckIn1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.OpenSignCheckin2 = new System.Windows.Forms.Panel();
+            this.signCheckIn2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.checkIn2Label = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.OpenSignTerminal2 = new System.Windows.Forms.Panel();
+            this.signTerminal2 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.terminal2Label = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.OpenSignTerminal1 = new System.Windows.Forms.Panel();
+            this.signTerminal1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.terminal1Label = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -66,13 +66,13 @@
             this.toggleAirportStatusBtn = new System.Windows.Forms.Button();
             this.airportStatusLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.OpenSignCheckin1.SuspendLayout();
+            this.signCheckIn1.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.OpenSignCheckin2.SuspendLayout();
+            this.signCheckIn2.SuspendLayout();
             this.panel19.SuspendLayout();
-            this.OpenSignTerminal2.SuspendLayout();
+            this.signTerminal2.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.OpenSignTerminal1.SuspendLayout();
+            this.signTerminal1.SuspendLayout();
             this.panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Plane1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Plane2)).BeginInit();
@@ -107,14 +107,14 @@
             this.checkIn1Label.AutoSize = true;
             this.checkIn1Label.Location = new System.Drawing.Point(3, 11);
             this.checkIn1Label.Name = "checkIn1Label";
-            this.checkIn1Label.Size = new System.Drawing.Size(55, 13);
+            this.checkIn1Label.Size = new System.Drawing.Size(58, 13);
             this.checkIn1Label.TabIndex = 3;
-            this.checkIn1Label.Text = "Checkin 1";
+            this.checkIn1Label.Text = "Check-in 1";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.OpenSignCheckin1);
+            this.panel1.Controls.Add(this.signCheckIn1);
             this.panel1.Controls.Add(this.checkIn1Label);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(67, 172);
@@ -122,14 +122,14 @@
             this.panel1.Size = new System.Drawing.Size(132, 114);
             this.panel1.TabIndex = 0;
             // 
-            // OpenSignCheckin1
+            // signCheckIn1
             // 
-            this.OpenSignCheckin1.BackColor = System.Drawing.Color.Red;
-            this.OpenSignCheckin1.Controls.Add(this.panel6);
-            this.OpenSignCheckin1.Location = new System.Drawing.Point(99, 10);
-            this.OpenSignCheckin1.Name = "OpenSignCheckin1";
-            this.OpenSignCheckin1.Size = new System.Drawing.Size(19, 60);
-            this.OpenSignCheckin1.TabIndex = 4;
+            this.signCheckIn1.BackColor = System.Drawing.Color.Red;
+            this.signCheckIn1.Controls.Add(this.panel6);
+            this.signCheckIn1.Location = new System.Drawing.Point(99, 10);
+            this.signCheckIn1.Name = "signCheckIn1";
+            this.signCheckIn1.Size = new System.Drawing.Size(19, 60);
+            this.signCheckIn1.TabIndex = 4;
             // 
             // panel6
             // 
@@ -150,7 +150,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel8.Controls.Add(this.OpenSignCheckin2);
+            this.panel8.Controls.Add(this.signCheckIn2);
             this.panel8.Controls.Add(this.checkIn2Label);
             this.panel8.Controls.Add(this.panel11);
             this.panel8.Location = new System.Drawing.Point(67, 299);
@@ -158,14 +158,14 @@
             this.panel8.Size = new System.Drawing.Size(132, 114);
             this.panel8.TabIndex = 5;
             // 
-            // OpenSignCheckin2
+            // signCheckIn2
             // 
-            this.OpenSignCheckin2.BackColor = System.Drawing.Color.Red;
-            this.OpenSignCheckin2.Controls.Add(this.panel10);
-            this.OpenSignCheckin2.Location = new System.Drawing.Point(99, 10);
-            this.OpenSignCheckin2.Name = "OpenSignCheckin2";
-            this.OpenSignCheckin2.Size = new System.Drawing.Size(19, 60);
-            this.OpenSignCheckin2.TabIndex = 4;
+            this.signCheckIn2.BackColor = System.Drawing.Color.Red;
+            this.signCheckIn2.Controls.Add(this.panel10);
+            this.signCheckIn2.Location = new System.Drawing.Point(99, 10);
+            this.signCheckIn2.Name = "signCheckIn2";
+            this.signCheckIn2.Size = new System.Drawing.Size(19, 60);
+            this.signCheckIn2.TabIndex = 4;
             // 
             // panel10
             // 
@@ -180,9 +180,9 @@
             this.checkIn2Label.AutoSize = true;
             this.checkIn2Label.Location = new System.Drawing.Point(3, 11);
             this.checkIn2Label.Name = "checkIn2Label";
-            this.checkIn2Label.Size = new System.Drawing.Size(55, 13);
+            this.checkIn2Label.Size = new System.Drawing.Size(58, 13);
             this.checkIn2Label.TabIndex = 3;
-            this.checkIn2Label.Text = "Checkin 2";
+            this.checkIn2Label.Text = "Check-in 2";
             // 
             // panel11
             // 
@@ -211,7 +211,7 @@
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel19.Controls.Add(this.OpenSignTerminal2);
+            this.panel19.Controls.Add(this.signTerminal2);
             this.panel19.Controls.Add(this.terminal2Label);
             this.panel19.Controls.Add(this.panel22);
             this.panel19.Location = new System.Drawing.Point(936, 407);
@@ -219,14 +219,14 @@
             this.panel19.Size = new System.Drawing.Size(105, 114);
             this.panel19.TabIndex = 5;
             // 
-            // OpenSignTerminal2
+            // signTerminal2
             // 
-            this.OpenSignTerminal2.BackColor = System.Drawing.Color.Red;
-            this.OpenSignTerminal2.Controls.Add(this.panel21);
-            this.OpenSignTerminal2.Location = new System.Drawing.Point(61, 11);
-            this.OpenSignTerminal2.Name = "OpenSignTerminal2";
-            this.OpenSignTerminal2.Size = new System.Drawing.Size(19, 60);
-            this.OpenSignTerminal2.TabIndex = 4;
+            this.signTerminal2.BackColor = System.Drawing.Color.Red;
+            this.signTerminal2.Controls.Add(this.panel21);
+            this.signTerminal2.Location = new System.Drawing.Point(61, 11);
+            this.signTerminal2.Name = "signTerminal2";
+            this.signTerminal2.Size = new System.Drawing.Size(19, 60);
+            this.signTerminal2.TabIndex = 4;
             // 
             // panel21
             // 
@@ -272,7 +272,7 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel13.Controls.Add(this.OpenSignTerminal1);
+            this.panel13.Controls.Add(this.signTerminal1);
             this.panel13.Controls.Add(this.terminal1Label);
             this.panel13.Controls.Add(this.panel16);
             this.panel13.Location = new System.Drawing.Point(936, 172);
@@ -280,14 +280,14 @@
             this.panel13.Size = new System.Drawing.Size(105, 114);
             this.panel13.TabIndex = 7;
             // 
-            // OpenSignTerminal1
+            // signTerminal1
             // 
-            this.OpenSignTerminal1.BackColor = System.Drawing.Color.Red;
-            this.OpenSignTerminal1.Controls.Add(this.panel15);
-            this.OpenSignTerminal1.Location = new System.Drawing.Point(61, 11);
-            this.OpenSignTerminal1.Name = "OpenSignTerminal1";
-            this.OpenSignTerminal1.Size = new System.Drawing.Size(19, 60);
-            this.OpenSignTerminal1.TabIndex = 4;
+            this.signTerminal1.BackColor = System.Drawing.Color.Red;
+            this.signTerminal1.Controls.Add(this.panel15);
+            this.signTerminal1.Location = new System.Drawing.Point(61, 11);
+            this.signTerminal1.Name = "signTerminal1";
+            this.signTerminal1.Size = new System.Drawing.Size(19, 60);
+            this.signTerminal1.TabIndex = 4;
             // 
             // panel15
             // 
@@ -441,16 +441,16 @@
             this.Text = "Bagagesortertingssystem";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.OpenSignCheckin1.ResumeLayout(false);
+            this.signCheckIn1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.OpenSignCheckin2.ResumeLayout(false);
+            this.signCheckIn2.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
-            this.OpenSignTerminal2.ResumeLayout(false);
+            this.signTerminal2.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.OpenSignTerminal1.ResumeLayout(false);
+            this.signTerminal1.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Plane1)).EndInit();
@@ -466,25 +466,25 @@
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label checkIn1Label;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel OpenSignCheckin1;
+		private System.Windows.Forms.Panel signCheckIn1;
 		private System.Windows.Forms.Panel panel6;
 		private System.Windows.Forms.Panel panel7;
 		private System.Windows.Forms.Panel panel8;
-		private System.Windows.Forms.Panel OpenSignCheckin2;
+		private System.Windows.Forms.Panel signCheckIn2;
 		private System.Windows.Forms.Panel panel10;
 		private System.Windows.Forms.Label checkIn2Label;
 		private System.Windows.Forms.Panel panel11;
 		private System.Windows.Forms.Panel panel12;
 		private System.Windows.Forms.Panel panel18;
 		private System.Windows.Forms.Panel panel19;
-		private System.Windows.Forms.Panel OpenSignTerminal2;
+		private System.Windows.Forms.Panel signTerminal2;
 		private System.Windows.Forms.Panel panel21;
 		private System.Windows.Forms.Label terminal2Label;
 		private System.Windows.Forms.Panel panel22;
 		private System.Windows.Forms.Panel panel23;
 		private System.Windows.Forms.Panel panel24;
 		private System.Windows.Forms.Panel panel13;
-		private System.Windows.Forms.Panel OpenSignTerminal1;
+		private System.Windows.Forms.Panel signTerminal1;
 		private System.Windows.Forms.Panel panel15;
 		private System.Windows.Forms.Label terminal1Label;
 		private System.Windows.Forms.Panel panel16;

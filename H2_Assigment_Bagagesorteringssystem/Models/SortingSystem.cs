@@ -11,7 +11,48 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 {
     internal class SortingSystem: InventoryContainer
     {
-        private Queue<Baggage> inputQueue;
+        private Queue<Baggage> _inputQueue;
+        private readonly object _lock = new object(); // Lock object for synchronization
+        /// <summary>
+        /// Initiates the baggage sorting system and begins processing incoming baggage.
+        /// </summary>
+        internal void StartSystem()
+		{
+            ProcessBaggage();
+        }
+
+        /// <summary>
+        /// Processes the incoming baggage items from the input queue.
+        /// Dequeues baggage items from the input queue and sorts them using the Sort method.
+        /// </summary>
+        private void ProcessBaggage()
+        {
+            while (true)
+            {
+                Baggage baggage = null;
+                lock (_lock) // Locking to ensure thread safety
+                {
+                    if (_inputQueue.Count > 0)
+                    {
+                        baggage = _inputQueue.Dequeue();
+                    }
+                }
+                if (baggage != null)
+                {
+                    Sort(baggage);
+                }
+                Thread.Sleep(200);
+            }
+        }
+
+        /// <summary>
+        /// Adds a new baggage item to the input queue for sorting.
+        /// </summary>
+        /// <param name="baggage">The baggage item to be added to the input queue.</param>
+        internal void EnqueueBaggage(Baggage baggage)
+        {
+            _inputQueue.Enqueue(baggage);
+        }
 
 
 		internal void Run()
@@ -41,8 +82,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 					}
 				}
 			}
-			// If the baggage couldn't be sorted to any terminal, enqueue it in the input queue
-			inputQueue.Enqueue(baggage);
+            // If the baggage couldn't be sorted to any terminal, enqueue it in the input queue
+            _inputQueue.Enqueue(baggage);
 		}
 		internal SortingSystem(int inventorySize) : base(inventorySize) { }
     }
