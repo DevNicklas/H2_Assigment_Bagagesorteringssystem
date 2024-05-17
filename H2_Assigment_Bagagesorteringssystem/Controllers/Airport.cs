@@ -15,6 +15,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         private static List<SortingSystem> _sortingSystems = new List<SortingSystem>();
 		private static List<CheckIn> _checkIns = new List<CheckIn>();
 		private static List<Plane> _planes = new List<Plane>();
+		private static Queue<Baggage> _incomingBaggageQueue = new Queue<Baggage>();
 		private static string _name = "DinLufthavn";
         private static bool _status = false;
 
@@ -66,27 +67,79 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			foreach (CheckIn checkIn in _checkIns)
 			{
 				checkIn.Open();
-
 			}
-			RunCheckIn();
-                /*
-		    Thread threadCheckin = new Thread(RunCheckIn);
-            Thread threadTerminal = new Thread(RunTerminal);
-			Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
-                */
 
-        }
+			// Initialize and start the threads for check-in, terminal, and sorting systems
+			StartThreads();
+
+            ChangeStatus();
+
+
+			while (_status)
+            {
+                foreach (Terminal terminal in _terminals)
+                {
+                    if (terminal.Plane == null)
+                    {
+                        terminal.Plane = AddPlane(100);
+                        terminal.Open();
+                        for (int i = 0; i < 100; i++)
+                        {
+                            _incomingBaggageQueue.Enqueue(new Baggage(terminal.Plane.FlightNumber));
+                        }
+                    }
+
+                    else
+                    {
+						if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
+                        {
+							terminal.Close();
+                            terminal.Plane = null;
+						}
+					}
+				}
+                Thread.Sleep(2000);
+			};
+		}
+
+		private static void StartThreads()
+		{
+			var threadCheckin = new Thread(RunCheckIn);
+			var threadTerminal = new Thread(RunTerminal);
+			var threadSort = new Thread(_sortingSystems[0].StartSystem);
+
+			threadCheckin.Start();
+			threadTerminal.Start();
+			threadSort.Start();
+		}
 		internal static void RunCheckIn()
 		{
 			while (true)
             {
-                foreach (CheckIn checkIn in _checkIns)
-                {
-					Baggage baggage = new Baggage();
-					checkIn.ServicePassenger(baggage);
-					Thread.Sleep(100); // Simulate processing time
-				}
+				foreach (var checkIn in _checkIns)
+				{
+					Baggage baggage = null;
+					if (_incomingBaggageQueue.Count > 0)
+					{
+						lock (_incomingBaggageQueue)
+						{
+							if (_incomingBaggageQueue.Count > 0) // Double-check within the lock
+							{
+								baggage = _incomingBaggageQueue.Dequeue();
+							}
+						}
+					}
 
+					if (baggage != null)
+					{
+						lock (checkIn)
+						{
+							checkIn.ServicePassenger(baggage);
+							Thread.Sleep(100); // Simulate processing time
+						}
+					}
+				}
+				Thread.Sleep(10);
 			}
 		}
 		internal static void RunTerminal()
@@ -99,7 +152,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                     {
                         terminal.SendBaggageToPlane();
                     }
-
                 }
             }
 		}
@@ -117,9 +169,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             return _status;
         }
 
-        internal static void AddPlane(int size)
+        internal static Plane AddPlane(int size)
         {
-			_planes.Add(new Plane(50, "New York", 180, new DateTime(2024, 5, 17, 14, 30, 0)));
+            Plane plane = new Plane(50, "New York", 180, new DateTime(2024, 5, 17, 14, 30, 0));
+			_planes.Add(plane);
+            return plane;
 		}
 
         internal static void AddSortingSystem()
