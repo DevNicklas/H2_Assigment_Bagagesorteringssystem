@@ -11,22 +11,22 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         private string _firstName;
         private string _lastName;
         private string _passportNumber;
-        private int _flightId;
+        private int _flightNumber;
         private string _boardingPassNumber;
 
-        public string FirstName { get { return _firstName; } }
-        public string LastName { get { return _lastName; } }
-        public string PassportNumber { get { return _passportNumber; } }
-        public int FlightId { get { return _flightId; } }
-        public string BoardingPassNumber { get { return _boardingPassNumber; } }
+        internal string FirstName { get { return _firstName; } }
+		internal string LastName { get { return _lastName; } }
+		internal string PassportNumber { get { return _passportNumber; } }
+		internal int FlightNumber { get { return _flightNumber; } }
+		internal string BoardingPassNumber { get { return _boardingPassNumber; } }
 
-        internal Passenger(string firstName, string lastName, string passportNumber, int flightId, string boardingPassNumber)
+        internal Passenger(string firstName, string lastName, string passportNumber, int flightNumber, string boardingPassNumber)
         {
-            this._firstName = firstName;
-            this._lastName = lastName;
-            this._passportNumber = passportNumber;
-            this._flightId = flightId;
-            this._boardingPassNumber = boardingPassNumber;
+            _firstName = firstName;
+            _lastName = lastName;
+            _passportNumber = passportNumber;
+			_flightNumber = flightNumber;
+            _boardingPassNumber = boardingPassNumber;
         }
     }
 }

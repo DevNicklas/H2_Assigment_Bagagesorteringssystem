@@ -62,6 +62,7 @@
     <Compile Include="Models\InventoryContainer.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\Plane.cs" />
+    <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\SortingSystem.cs" />
     <Compile Include="Models\Baggage\Tag.cs" />
     <Compile Include="Models\Terminal.cs" />

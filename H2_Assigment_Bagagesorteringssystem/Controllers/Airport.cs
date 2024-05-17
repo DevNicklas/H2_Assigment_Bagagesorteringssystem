@@ -68,22 +68,25 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         }
         internal static void RunAirport()
         {
-            AddCheckIn();
-            AddTerminal();
-            AddSortingSystem();
-
-			foreach (CheckIn checkIn in _checkIns)
+			for (int i = 0; i < 2; i++)
 			{
-				checkIn.Open();
+				AddCheckIn();
+				AddTerminal();
 			}
+			AddSortingSystem();
+
 
 			// Initialize and start the threads for check-in, terminal, and sorting systems
 			StartThreads();
 
             ChangeStatus();
 
+			foreach (CheckIn checkIn in _checkIns)
+			{
+				checkIn.Open();
+			}
 
-			
+
 		}
 
 		private static void StartThreads()
@@ -91,12 +94,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			Thread threadCheckin = new Thread(RunCheckIn);
 			Thread threadTerminal = new Thread(RunTerminal);
 			Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
-			Thread threadSim = new Thread(Simulator.RunSimulator);
+			
 
 			threadCheckin.Start();
 			threadTerminal.Start();
 			threadSort.Start();
-			threadSim.Start();
+			
 		}
 		internal static void RunCheckIn()
 		{
@@ -121,7 +124,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 						lock (checkIn)
 						{
 							checkIn.ServicePassenger(baggage);
-							Thread.Sleep(100); // Simulate processing time
+							Thread.Sleep(200); // Simulate processing time
 						}
 					}
 				}
@@ -137,7 +140,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                     if (terminal.InventorySize > 0)
                     {
                         terminal.SendBaggageToPlane();
-                    }
+						Thread.Sleep(200); // Simulate processing time
+					}
                 }
             }
 		}
@@ -151,13 +155,15 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             else
             {
                 _status = true;
+				Thread threadSim = new Thread(Simulator.RunSimulator);
+				threadSim.Start();
 			}
 		}
 
         internal static Plane AddPlane(int size)
         {
 			Random random = new Random();
-			Plane plane = new Plane(random.Next(0, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
+			Plane plane = new Plane(random.Next(5, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
 			_planes.Add(plane);
             return plane;
 		}
