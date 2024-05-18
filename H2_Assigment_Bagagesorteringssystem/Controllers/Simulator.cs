@@ -19,7 +19,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		/// <summary>
 		/// Runs the airport simulator.
 		/// </summary>
-		public static void RunSimulator()
+		internal static void RunSimulator()
 		{
 			while (Airport.Status)
 			{
@@ -54,15 +54,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		/// <param name="terminal">The terminal to which a new plane is assigned.</param>
 		private static void AssignNewPlaneToTerminal(Terminal terminal)
 		{
-			Plane incomingPlane = GetRandomPlane();
+			Plane incomingPlane = Airport.AddRandomPlane();
 			terminal.Plane = incomingPlane;
 			GenerateNewBaggage(incomingPlane);
 			terminal.Open();
 		}
-		private static Plane GetRandomPlane()
-		{
-			return Airport.AddPlane(100, "KBH");
-		}
+
 		private static void GenerateNewBaggage(Plane plane)
 		{
 			for (int i = 0; i < plane.InventorySize; i++)

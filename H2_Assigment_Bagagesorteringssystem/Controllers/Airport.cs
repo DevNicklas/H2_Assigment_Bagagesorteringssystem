@@ -160,7 +160,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				RunAirport();
 			}
 		}
-
+		internal static Plane AddRandomPlane()
+		{
+			return AddPlane(100, "KBH");
+		}
 		/// <summary>
 		/// Adds a new plane with a specified inventory size and destination to the airport.
 		/// </summary>
