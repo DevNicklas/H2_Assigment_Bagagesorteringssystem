@@ -15,7 +15,6 @@ namespace H2_Assigment_Bagagesorteringssystem
 {
     public partial class MainForm : Form, IView
     {
-
         public MainForm()
         {
             InitializeComponent();
@@ -41,7 +40,7 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// <summary>
         /// Update view for airport status
         /// </summary>
-        internal void UpdateAirportStatusLabel()
+        void IView.UpdateAirportStatusLabel()
         {
             if (Airport.Status)
             {
@@ -58,8 +57,9 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// </summary>
         /// <param name="idx">The check-in index</param>
         /// <param name="status">Status of check-in</param>
-        internal void UpdateCheckInSignStatus(sbyte idx, bool status)
+        void IView.UpdateCheckInSignStatus(sbyte idx, bool status)
         {
+            // Make the sign for check-in to green or red
             Panel signCheckInToUpdate = idx == 1 ? signCheckIn2 : signCheckIn1;
             signCheckInToUpdate.BackColor = status ? Color.Green : Color.Red;
         }
@@ -69,8 +69,9 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// </summary>
         /// <param name="idx">The check-in index</param>
         /// <param name="status">Status of check-in</param>
-        internal void UpdateTerminalSignStatus(sbyte idx, bool status)
+        void IView.UpdateTerminalSignStatus(sbyte idx, bool status)
         {
+            // Make the sign for terminal to green or red
             Panel signTerminalToUpdate = idx == 1 ? signTerminal2 : signTerminal1;
             signTerminalToUpdate.BackColor = status ? Color.Green : Color.Red;
 
@@ -88,6 +89,61 @@ namespace H2_Assigment_Bagagesorteringssystem
             {
                 planeImageToUpdate.Visible = status;
             }
+        }
+
+        void IView.AddToSortingQueue(Baggage baggage)
+        {
+            if (sortingSystemQueue.InvokeRequired)
+            {
+                sortingSystemQueue.Invoke((Action)(() =>
+                {
+                    sortingSystemQueue.Items.Add(baggage);
+                }));
+            }
+            else
+            {
+                sortingSystemQueue.Items.Add(baggage);
+            }
+        }
+
+        void IView.RemoveFromSortingQueue(Baggage baggage)
+        {
+            if (sortingSystemQueue.InvokeRequired)
+            {
+                sortingSystemQueue.Invoke((Action)(() =>
+                {
+                    sortingSystemQueue.Items.Remove(baggage);
+                }));
+            }
+            else
+            {
+                sortingSystemQueue.Items.Remove(baggage);
+            }
+        }
+
+        internal void UpdateAirportStatusLabel()
+        {
+            ((IView)this).UpdateAirportStatusLabel();
+        }
+
+        internal void UpdateCheckInSignStatus(sbyte idx, bool status)
+        {
+            ((IView)this).UpdateCheckInSignStatus(idx, status);
+        }
+
+        internal void UpdateTerminalSignStatus(sbyte idx, bool status)
+        {
+            ((IView)this).UpdateTerminalSignStatus(idx, status);
+        }
+
+        internal void AddToSortingQueue(Baggage baggage)
+        {
+            ((IView)this).AddToSortingQueue(baggage);
+        }
+
+        internal void RemoveFromSortingQueue(Baggage baggage)
+        {
+            ((IView)this).RemoveFromSortingQueue(baggage);
         }
     }
 }

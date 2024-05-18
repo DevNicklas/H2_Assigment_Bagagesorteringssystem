@@ -15,5 +15,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Interfaces
         void UpdateCheckInSignStatus(sbyte idx, bool status);
 
         void UpdateTerminalSignStatus(sbyte idx, bool status);
+
+        void AddToSortingQueue(Baggage baggage);
+
+        void RemoveFromSortingQueue(Baggage baggage);
     }
 }

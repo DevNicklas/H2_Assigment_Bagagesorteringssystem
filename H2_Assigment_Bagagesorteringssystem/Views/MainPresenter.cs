@@ -1,5 +1,6 @@
 ﻿using H2_Assigment_Bagagesorteringssystem.Controllers;
 using H2_Assigment_Bagagesorteringssystem.Interfaces;
+using H2_Assigment_Bagagesorteringssystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
 
             Airport.Terminals[0].TerminalStatusChanged += (sender, e) => OnTerminalStatusUpdate(0);
             Airport.Terminals[1].TerminalStatusChanged += (sender, e) => OnTerminalStatusUpdate(1);
+
+            SortingSystem sortingSystem = Airport.SortingSystems[0];
+            sortingSystem.AddToSortingQueue += (sender, e) => OnSortingQueueAdd(sortingSystem.NewlyQueuedBaggage);
+
+            sortingSystem.RemoveFromSortingQueue += (sender, e) => OnSortingQueueRemoved(sortingSystem.NewlyDequeuedBaggage);
         }
 
         private void OnCheckInStatusUpdate(sbyte idx)
@@ -31,6 +37,16 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
         private void OnTerminalStatusUpdate(sbyte idx)
         {
             _view.UpdateTerminalSignStatus(idx, Airport.Terminals[idx].Status);
+        }
+
+        private void OnSortingQueueAdd(Baggage baggage)
+        {
+            _view.AddToSortingQueue(baggage);
+        }
+
+        private void OnSortingQueueRemoved(Baggage baggage)
+        {
+            _view.RemoveFromSortingQueue(baggage);
         }
     }
 }

@@ -13,6 +13,32 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
     {
         private Queue<Baggage> _inputQueue = new Queue<Baggage>();
         private readonly object _lock = new object(); // Lock object for synchronization
+
+        internal event EventHandler AddToSortingQueue;
+        internal event EventHandler RemoveFromSortingQueue;
+
+        private Baggage _newlyQueuedBaggage;
+        private Baggage _newlyDequeuedBaggage;
+
+
+        internal SortingSystem(int inventorySize) : base(inventorySize) { }
+
+        internal Baggage NewlyQueuedBaggage
+        {
+            get
+            {
+                return _newlyQueuedBaggage;
+            }
+        }
+
+        internal Baggage NewlyDequeuedBaggage
+        {
+            get
+            {
+                return _newlyDequeuedBaggage;
+            }
+        }
+
         /// <summary>
         /// Initiates the baggage sorting system and begins processing incoming baggage.
         /// </summary>
@@ -35,6 +61,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
                     if (_inputQueue.Count > 0)
                     {
                         baggage = _inputQueue.Dequeue();
+                        _newlyDequeuedBaggage = baggage;
+                        RemoveFromSortingQueue?.Invoke(this, EventArgs.Empty);
                     }
                 }
                 if (baggage != null)
@@ -52,6 +80,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         internal void EnqueueBaggage(Baggage baggage)
         {
             _inputQueue.Enqueue(baggage);
+            _newlyQueuedBaggage = baggage;
+            AddToSortingQueue?.Invoke(this, EventArgs.Empty);
         }
 
 
@@ -72,9 +102,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 					}
 				}
 			}
+
             // If the baggage couldn't be sorted to any terminal, enqueue it in the input queue
-            _inputQueue.Enqueue(baggage);
+            EnqueueBaggage(baggage);
 		}
-		internal SortingSystem(int inventorySize) : base(inventorySize) { }
     }
 }
