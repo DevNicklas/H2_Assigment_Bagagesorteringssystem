@@ -13,8 +13,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 	/// </summary>
 	internal static class Simulator
 	{
-		private const int TerminalCheckInterval = 2000;
-		private const int SimulationCycleInterval = 10000;
+		private const int TERMINAL_CHECK_INTERVAL = 2000;
+		private const int SIMULATION_CYCLE_INTERVAL = 10000;
 
 		/// <summary>
 		/// Runs the airport simulator.
@@ -27,7 +27,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				{
 					ProcessTerminal(terminal);
 				}
-				Thread.Sleep(SimulationCycleInterval);
+				Thread.Sleep(SIMULATION_CYCLE_INTERVAL);
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			{
 				CloseTerminalAndRemovePlane(terminal);
 			}
-			Thread.Sleep(TerminalCheckInterval);
+			Thread.Sleep(TERMINAL_CHECK_INTERVAL);
 		}
 
 		/// <summary>
