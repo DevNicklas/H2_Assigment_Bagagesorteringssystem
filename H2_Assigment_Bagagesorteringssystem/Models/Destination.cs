@@ -18,9 +18,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
         internal Destination(string city, string country, string airportCode)
         {
-            this._city = city;
-            this._country = country;
-            this._airportCode = airportCode;
+            _city = city;
+            _country = country;
+            _airportCode = airportCode;
         }
     }
 }
