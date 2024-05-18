@@ -61,7 +61,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		}
 		private static Plane GetRandomPlane()
 		{
-			return Airport.AddPlane(100);
+			return Airport.AddPlane(100, "KBH");
 		}
 		private static void GenerateNewBaggage(Plane plane)
 		{

@@ -161,10 +161,18 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			}
 		}
 
-        internal static Plane AddPlane(int size)
+		/// <summary>
+		/// Adds a new plane with a specified inventory size and destination to the airport.
+		/// </summary>
+		/// <param name="size">The maximum inventory size of the plane.</param>
+		/// <param name="destination">The destination of the plane.</param>
+		/// <returns>The newly created Plane object.</returns>
+		internal static Plane AddPlane(int size, string destination)
         {
 			Random random = new Random();
-			Plane plane = new Plane(random.Next(5, size + 1), "New York", size, new DateTime(2024, 5, 17, 14, 30, 0));
+            int numberOfBaggage = random.Next(5, size + 1);
+
+			Plane plane = new Plane(numberOfBaggage, destination, size, new DateTime(2024, 5, 17, 14, 30, 0));
 			_planes.Add(plane);
             return plane;
 		}
