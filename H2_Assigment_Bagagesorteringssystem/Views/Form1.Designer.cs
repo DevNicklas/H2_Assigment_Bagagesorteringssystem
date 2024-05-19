@@ -60,8 +60,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.planeImage1 = new System.Windows.Forms.PictureBox();
             this.planeImage2 = new System.Windows.Forms.PictureBox();
-            this.plane2TextBox = new System.Windows.Forms.TextBox();
-            this.plane1TextBox = new System.Windows.Forms.TextBox();
             this.sortingSystemQueue = new System.Windows.Forms.ListBox();
             this.toggleAirportStatusBtn = new System.Windows.Forms.Button();
             this.airportStatusLabel = new System.Windows.Forms.Label();
@@ -366,24 +364,6 @@
             this.planeImage2.TabStop = false;
             this.planeImage2.Visible = false;
             // 
-            // plane2TextBox
-            // 
-            this.plane2TextBox.Location = new System.Drawing.Point(1282, 321);
-            this.plane2TextBox.Multiline = true;
-            this.plane2TextBox.Name = "plane2TextBox";
-            this.plane2TextBox.ReadOnly = true;
-            this.plane2TextBox.Size = new System.Drawing.Size(100, 20);
-            this.plane2TextBox.TabIndex = 12;
-            // 
-            // plane1TextBox
-            // 
-            this.plane1TextBox.Location = new System.Drawing.Point(1282, 86);
-            this.plane1TextBox.Multiline = true;
-            this.plane1TextBox.Name = "plane1TextBox";
-            this.plane1TextBox.ReadOnly = true;
-            this.plane1TextBox.Size = new System.Drawing.Size(100, 20);
-            this.plane1TextBox.TabIndex = 13;
-            // 
             // sortingSystemQueue
             // 
             this.sortingSystemQueue.FormattingEnabled = true;
@@ -416,12 +396,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1434, 639);
+            this.ClientSize = new System.Drawing.Size(1277, 639);
             this.Controls.Add(this.airportStatusLabel);
             this.Controls.Add(this.toggleAirportStatusBtn);
             this.Controls.Add(this.sortingSystemQueue);
-            this.Controls.Add(this.plane1TextBox);
-            this.Controls.Add(this.plane2TextBox);
             this.Controls.Add(this.planeImage2);
             this.Controls.Add(this.planeImage1);
             this.Controls.Add(this.panel25);
@@ -493,8 +471,6 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.PictureBox planeImage1;
 		private System.Windows.Forms.PictureBox planeImage2;
-		private System.Windows.Forms.TextBox plane2TextBox;
-		private System.Windows.Forms.TextBox plane1TextBox;
         private System.Windows.Forms.ListBox sortingSystemQueue;
         private System.Windows.Forms.Button toggleAirportStatusBtn;
         private System.Windows.Forms.Label airportStatusLabel;
