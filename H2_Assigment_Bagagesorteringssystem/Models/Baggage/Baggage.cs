@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+    /// <summary>
+    /// Represents a baggage item in the baggage sorting system, inheriting from Tag.
+    /// </summary>
     internal class Baggage : Tag
     {
         private float _weight = 0;

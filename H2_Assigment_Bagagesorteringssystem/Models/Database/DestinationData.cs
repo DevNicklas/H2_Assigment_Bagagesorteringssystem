@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models.Database
 {
+    /// <summary>
+    /// Handles data retrieval for destinations from the database.
+    /// </summary>
     internal class DestinationData
     {
         private readonly DatabaseConnection _dbConnection;
@@ -17,6 +20,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
             _dbConnection = dbConnection;
         }
 
+        /// <summary>
+        /// Gets the list of destinations fetched from the database.
+        /// </summary>
         internal List<Destination> Destinations
         {
             get
@@ -24,7 +30,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
                 return _destinations;
             }
         }
-
+        /// <summary>
+        /// Initializes a new instance of the DestinationData class with the specified database connection.
+        /// </summary>
+        /// <param name="dbConnection">The database connection to use for fetching destinations.</param>
         internal void FetchDestinations()
         {
             MySqlConnection conn = _dbConnection.GetConnection();

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace H2_Assigment_Bagagesorteringssystem.Controllers
 {
+    /// <summary>
+    /// Represents the main airport system controller.
+    /// </summary>
     internal static class Airport
     {
         private static List<Terminal> _terminals = new List<Terminal>();
@@ -68,7 +71,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 return _status;
             }
         }
-
+        /// <summary>
+        /// Initializes the airport with terminals, check-in counters, and sorting systems.
+        /// </summary>
         internal static void InitializeAirport()
 		{
             for (int i = 0; i < 2; i++)
@@ -79,6 +84,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             AddSortingSystem();
         }
 
+        /// <summary>
+        /// Starts the operations of the airport.
+        /// </summary>
         internal static void RunAirport()
         {
 			// Initialize and start the threads for check-in, terminal, and sorting systems
@@ -92,7 +100,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 		}
 
-		private static void StartThreads()
+        /// <summary>
+        /// Starts threads for check-in, terminal, and sorting systems.
+        /// </summary>
+        private static void StartThreads()
 		{
             if(_status)
             {
@@ -108,7 +119,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
 
 		}
-		internal static void RunCheckIn()
+
+        /// <summary>
+        /// Manages the processing of baggage at check-in counters.
+        /// </summary>
+        internal static void RunCheckIn()
 		{
 			while (true)
             {
@@ -138,6 +153,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				Thread.Sleep(70);
 			}
 		}
+
+        /// <summary>
+        /// Manages the processing of baggage at terminals.
+        /// </summary>
 		internal static void RunTerminal()
 		{
             while (true)
@@ -153,7 +172,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
 		}
 
-		internal static void ChangeStatus()
+        /// <summary>
+        /// Changes the status of the airport.
+        /// </summary>
+        internal static void ChangeStatus()
         {
             if (_status)
             {
@@ -187,9 +209,13 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 RunAirport();
 			}
         }
-		internal static Plane AddRandomPlane()
+
+        /// <summary>
+        /// Adds a ""random"" plane to the airport.
+        /// </summary>
+        internal static Plane AddRandomPlane()
 		{
-			return AddPlane(100, "KBH");
+			return AddPlane(100, "KBH"); // Not random for now
 		}
 		/// <summary>
 		/// Adds a new plane with a specified inventory size and destination to the airport.
@@ -207,16 +233,24 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             return plane;
 		}
 
+        /// <summary>
+        /// Adds a new SortingSystems with inventory size of 1
+        /// </summary>
         internal static void AddSortingSystem()
         {
             _sortingSystems.Add(new SortingSystem(1));
         }
-
+        /// <summary>
+        /// Adds a new CheckIn with inventory size of 1
+        /// </summary>
 		internal static void AddCheckIn()
         {
 			_checkIns.Add(new CheckIn(1));
 		}
 
+        /// <summary>
+        /// Adds a new Terminal with inventory size of 1
+        /// </summary>
         internal static void AddTerminal()
         {
             _terminals.Add(new Terminal(1));

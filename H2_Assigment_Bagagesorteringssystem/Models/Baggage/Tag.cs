@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-	internal class Tag 
+    /// <summary>
+    /// Represents a tag associated with baggage, containing flight number and baggage number.
+    /// </summary>
+    internal class Tag 
 	{
 		private int _flightNumber;
 		private string _baggageNumber;
@@ -20,13 +23,20 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		{
 			get { return _baggageNumber; }
 		}
-		internal Tag(int flightNumber) 
+
+        /// <summary>
+        /// Initializes a new instance of the Tag class with the specified flight number.
+        /// </summary>
+        internal Tag(int flightNumber) 
 		{
 			_flightNumber = flightNumber;
 			_baggageNumber = GenerateBaggageNumber();
 		}
 
-		private string GenerateBaggageNumber()
+        /// <summary>
+        /// Generates a unique baggage number based on current ticks and random characters.
+        /// </summary>
+        private string GenerateBaggageNumber()
 		{
 			Thread.Sleep(1);
 			int numbers = (int)(DateTime.Now.Ticks % int.MaxValue);
