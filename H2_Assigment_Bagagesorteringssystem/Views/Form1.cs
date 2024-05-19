@@ -96,12 +96,12 @@ namespace H2_Assigment_Bagagesorteringssystem
             {
                 sortingSystemQueue.Invoke((Action)(() =>
                 {
-                    sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
+                    sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BaggageNumber} | FlightNumber:{baggage.FlightNumber}");
                 }));
             }
             else
             {
-                sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
+                sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BaggageNumber} | FlightNumber:{baggage.FlightNumber}");
             }
         }
 
@@ -111,12 +111,12 @@ namespace H2_Assigment_Bagagesorteringssystem
             {
                 sortingSystemQueue.Invoke((Action)(() =>
                 {
-                    sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
+                    sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BaggageNumber} | FlightNumber:{baggage.FlightNumber}");
                 }));
             }
             else
             {
-                sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
+                sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BaggageNumber} | FlightNumber:{baggage.FlightNumber}");
             }
         }
 

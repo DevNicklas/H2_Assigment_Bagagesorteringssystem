@@ -198,8 +198,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 				_incomingBaggageQueue.Clear();
 				_planes.Clear();
-                Simulator.NumberOfTodaysPassengers = 0;
-                Simulator.NumberOfTodaysFlights = 0;
             }
             else
             {
