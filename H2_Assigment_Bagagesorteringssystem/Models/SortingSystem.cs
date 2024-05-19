@@ -17,11 +17,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         private Queue<Baggage> _inputQueue = new Queue<Baggage>();
         private readonly object _lock = new object(); // Lock object for synchronization
 
-        internal event EventHandler AddToSortingQueue;
-        internal event EventHandler RemoveFromSortingQueue;
-
         private Baggage _newlyQueuedBaggage;
         private Baggage _newlyDequeuedBaggage;
+
+        internal event EventHandler AddToSortingQueue;
+        internal event EventHandler RemoveFromSortingQueue;
 
 
         internal SortingSystem(int inventorySize) : base(inventorySize) { }

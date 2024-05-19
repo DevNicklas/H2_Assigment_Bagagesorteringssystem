@@ -13,7 +13,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 	{
 		private Passenger _passenger;
 		private Plane _plane;
-		private Baggage _bagage;
+		private Baggage _baggage;
 
         /// <summary>
         /// Initializes a new instance of the Reservation class with the specified passenger, plane, and baggage.
@@ -21,11 +21,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// <param name="passenger">The passenger associated with the reservation.</param>
         /// <param name="plane">The plane associated with the reservation.</param>
         /// <param name="bagage">The baggage associated with the reservation.</param>
-        internal Reservation(Passenger passenger, Plane plane, Baggage bagage)
+        internal Reservation(Passenger passenger, Plane plane, Baggage baggage)
 		{
 			_passenger = passenger;
 			_plane = plane;
-			_bagage = bagage;
+			_baggage = baggage;
 		}	
 	}
 }

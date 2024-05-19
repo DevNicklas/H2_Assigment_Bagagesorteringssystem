@@ -17,22 +17,22 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
         internal event EventHandler TerminalStatusChanged;
 
-        internal bool Status
-        {
-            get { return _status; }
-        }
-
-		internal Plane Plane
-		{
-			get { return _plane; }
-			set { _plane = value; }
-		}
-
         /// <summary>
         /// Initializes a new instance of the Terminal class with the specified inventory size.
         /// </summary>
         /// <param name="inventorySize">The maximum inventory size of the terminal.</param>
         public Terminal(int inventorySize) : base(inventorySize) { }
+
+        internal bool Status
+        {
+            get { return _status; }
+        }
+
+        internal Plane Plane
+        {
+            get { return _plane; }
+            set { _plane = value; }
+        }
 
         /// <summary>
         /// Opens the terminal.
