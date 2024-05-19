@@ -10,24 +10,23 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
     internal class Plane : InventoryContainer
     {
         private readonly int _flightNumber;
-        internal int FlightNumber => _flightNumber;
-
-        private readonly string _destination;
-        internal string Destination => _destination;
-
-        private readonly int _maxPassengers;
-        internal int MaxPassengers => _maxPassengers;
-
         private readonly DateTime _departure;
-        internal DateTime Departure => _departure;
+        private readonly string _destination;
+        private readonly int _maxPassengers;
+
 
         internal Plane(int inventorySize, string destination, int maxPassengers, DateTime departure) : base(inventorySize)
         {
             _flightNumber = GenerateFlightNumber();
+            _departure = departure;
             _destination = destination;
             _maxPassengers = maxPassengers;
-            _departure = departure;
         }
+
+        public int FlightNumber => _flightNumber;
+        public DateTime Departure => _departure;
+        public string Destination => _destination;
+        public int MaxPassengers => _maxPassengers;
 
         /// <summary>
         /// Generates a unique flight number
