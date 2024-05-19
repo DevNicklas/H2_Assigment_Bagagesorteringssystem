@@ -18,8 +18,6 @@ namespace H2_Assigment_Bagagesorteringssystem
         [STAThread]
         static void Main()
         {
-            DataHandler.DatahandlerTest();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

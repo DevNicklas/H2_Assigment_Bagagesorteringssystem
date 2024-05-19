@@ -129,11 +129,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// <summary>
         /// Gets all the flights from the Database
         /// </summary>
-        public static void GetFlight()
+        public void GetFlight()
         {
-            string filePath = @"C:\connection.txt";
-            string connectionString;
-
             try
             {
                 connectionString = File.ReadAllText(filePath).Trim();
@@ -180,11 +177,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
                     throw new Exception($"MySQL Error: Unable to connect to the database. {mysqlEx.Message}");
                 }
             }
-        }
-
-        public static void DatahandlerTest()
-        {
-            GetFlight();
         }
     }
 }
