@@ -68,6 +68,7 @@
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\SortingSystem.cs" />
     <Compile Include="Models\Baggage\Tag.cs" />
+    <Compile Include="Models\StatusRapport.cs" />
     <Compile Include="Models\Terminal.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>

@@ -12,10 +12,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
     {
         private const int TERMINAL_CHECK_INTERVAL = 5000;
         private const int SIMULATION_CYCLE_INTERVAL = 3000;
-        internal const int NumberOfPerDayFlights = 1;
+        internal const int NumberOfPerDayFlights = 3;
 
         internal static int NumberOfTodaysFlights;
-        internal static int NumberOfTodaysPassenger;
+        internal static int NumberOfTodaysPassengers;
+        internal static int NumberOfTodaysBaggage;
 
         /// <summary>
         /// Runs the airport simulator.
@@ -27,12 +28,16 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 foreach (Terminal terminal in Airport.Terminals)
                 {
                     ProcessTerminal(terminal);
-                    Console.WriteLine("Open a terminal");
                 }
 
                 if (NumberOfPerDayFlights == NumberOfTodaysFlights && AreAllTerminalsClosed())
                 {
                     Airport.ChangeStatus();
+                    // Generate and write report
+                    var report = new StatusRapport();
+                    // Find it here: "bin\(Debug/Release)"
+                    report.WriteReportToFile("AirportStatusReport.txt");
+
                 }
 
                 Thread.Sleep(SIMULATION_CYCLE_INTERVAL);
@@ -76,6 +81,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             Plane incomingPlane = Airport.AddRandomPlane();
             terminal.Plane = incomingPlane;
             NumberOfTodaysFlights++;
+            NumberOfTodaysPassengers += terminal.Plane.MaxPassengers;
+            NumberOfTodaysBaggage += terminal.Plane.InventorySize;
 
             GenerateNewBaggage(incomingPlane);
             terminal.Open();

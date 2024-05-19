@@ -53,7 +53,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// </summary>
         private void ProcessBaggage()
         {
-            while (true)
+            while (Airport.Status == true)
             {
                 Baggage baggage = null;
                 lock (_lock) // Locking to ensure thread safety
