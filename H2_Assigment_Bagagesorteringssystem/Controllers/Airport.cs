@@ -177,7 +177,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 				_incomingBaggageQueue.Clear();
 				_planes.Clear();
-                Simulator.NumberOfTodaysPassenger = 0;
+                Simulator.NumberOfTodaysPassengers = 0;
                 Simulator.NumberOfTodaysFlights = 0;
             }
             else
