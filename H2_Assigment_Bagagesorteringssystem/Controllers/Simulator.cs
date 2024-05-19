@@ -13,8 +13,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 	/// </summary>
 	internal static class Simulator
 	{
-		private const int TERMINAL_CHECK_INTERVAL = 2000;
-		private const int SIMULATION_CYCLE_INTERVAL = 10000;
+		private const int TERMINAL_CHECK_INTERVAL = 10000;
+		private const int SIMULATION_CYCLE_INTERVAL = 3000;
 
 		/// <summary>
 		/// Runs the airport simulator.

@@ -387,9 +387,9 @@
             // sortingSystemQueue
             // 
             this.sortingSystemQueue.FormattingEnabled = true;
-            this.sortingSystemQueue.Location = new System.Drawing.Point(424, 172);
+            this.sortingSystemQueue.Location = new System.Drawing.Point(360, 172);
             this.sortingSystemQueue.Name = "sortingSystemQueue";
-            this.sortingSystemQueue.Size = new System.Drawing.Size(257, 446);
+            this.sortingSystemQueue.Size = new System.Drawing.Size(401, 446);
             this.sortingSystemQueue.TabIndex = 14;
             // 
             // toggleAirportStatusBtn
