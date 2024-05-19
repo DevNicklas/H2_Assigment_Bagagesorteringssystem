@@ -125,5 +125,66 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
                 }
             }
         }
+
+        /// <summary>
+        /// Gets all the flights from the Database
+        /// </summary>
+        public static void GetFlight()
+        {
+            string filePath = @"C:\connection.txt";
+            string connectionString;
+
+            try
+            {
+                connectionString = File.ReadAllText(filePath).Trim();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error reading the connection string from the file: {ex.Message}");
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    try
+                    {
+                        string query = "CALL GetFlights()";
+                        MySqlCommand cmd = new MySqlCommand(query, conn);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+
+                        List<Plane> planes = new List<Plane>();
+
+                        while (reader.Read())
+                        {
+                            int flightNumber = Convert.ToInt32(reader["flight_number"]);
+                            string destination = reader["destination_id"].ToString();
+                            int maxPassengers = Convert.ToInt32(reader["avaibale_seats"]);
+                            DateTime departureTime = Convert.ToDateTime(reader["departure_time"]);
+
+                            Plane plane = new Plane(flightNumber, destination, maxPassengers, departureTime);
+                            planes.Add(plane);
+                        }
+                        reader.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        throw new Exception($"Could not get connection to the table. {ex.Message}");
+                    }
+                }
+                catch (MySqlException mysqlEx)
+                {
+                    throw new Exception($"MySQL Error: Unable to connect to the database. {mysqlEx.Message}");
+                }
+            }
+        }
+
+        public static void DatahandlerTest()
+        {
+            GetFlight();
+        }
     }
 }
