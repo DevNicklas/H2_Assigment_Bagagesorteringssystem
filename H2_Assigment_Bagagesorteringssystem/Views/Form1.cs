@@ -97,12 +97,12 @@ namespace H2_Assigment_Bagagesorteringssystem
             {
                 sortingSystemQueue.Invoke((Action)(() =>
                 {
-                    sortingSystemQueue.Items.Add(baggage);
+                    sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
                 }));
             }
             else
             {
-                sortingSystemQueue.Items.Add(baggage);
+                sortingSystemQueue.Items.Add($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
             }
         }
 
@@ -112,14 +112,15 @@ namespace H2_Assigment_Bagagesorteringssystem
             {
                 sortingSystemQueue.Invoke((Action)(() =>
                 {
-                    sortingSystemQueue.Items.Remove(baggage);
+                    sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
                 }));
             }
             else
             {
-                sortingSystemQueue.Items.Remove(baggage);
+                sortingSystemQueue.Items.Remove($"Weight: {baggage.Weight} | BagageNumber: {baggage.BagageNumber} | FlightNumber:{baggage.FlightNumber}");
             }
         }
+
 
         internal void UpdateAirportStatusLabel()
         {

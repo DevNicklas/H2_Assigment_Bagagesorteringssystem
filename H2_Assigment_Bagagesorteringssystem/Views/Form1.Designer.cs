@@ -343,7 +343,7 @@
             // planeImage1
             // 
             this.planeImage1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.planeImage1.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+            this.planeImage1.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\bin\\Debug\\png\\airplane.png";
             this.planeImage1.Location = new System.Drawing.Point(1065, 86);
             this.planeImage1.Margin = new System.Windows.Forms.Padding(0);
             this.planeImage1.Name = "planeImage1";
@@ -356,7 +356,7 @@
             // planeImage2
             // 
             this.planeImage2.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.planeImage2.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\png\\airplane.png";
+            this.planeImage2.ImageLocation = "H2_Assigment_Bagagesorteringssystem\\bin\\Debug\\png\\airplane.png";
             this.planeImage2.Location = new System.Drawing.Point(1065, 321);
             this.planeImage2.Margin = new System.Windows.Forms.Padding(0);
             this.planeImage2.Name = "planeImage2";
@@ -387,9 +387,9 @@
             // sortingSystemQueue
             // 
             this.sortingSystemQueue.FormattingEnabled = true;
-            this.sortingSystemQueue.Location = new System.Drawing.Point(424, 172);
+            this.sortingSystemQueue.Location = new System.Drawing.Point(360, 172);
             this.sortingSystemQueue.Name = "sortingSystemQueue";
-            this.sortingSystemQueue.Size = new System.Drawing.Size(257, 446);
+            this.sortingSystemQueue.Size = new System.Drawing.Size(401, 446);
             this.sortingSystemQueue.TabIndex = 14;
             // 
             // toggleAirportStatusBtn

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
@@ -27,6 +28,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
 		private string GenerateBaggageNumber()
 		{
+			Thread.Sleep(1);
 			int numbers = (int)(DateTime.Now.Ticks % int.MaxValue);
 			string baggageNumber = numbers.ToString() + GenerateRandomCharacters();
 			return baggageNumber;
