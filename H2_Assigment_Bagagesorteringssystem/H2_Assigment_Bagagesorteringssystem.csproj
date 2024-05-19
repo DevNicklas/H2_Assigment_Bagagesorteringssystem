@@ -57,7 +57,10 @@
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Models\Baggage\Baggage.cs" />
     <Compile Include="Models\CheckIn.cs" />
-    <Compile Include="Models\DataHandler.cs" />
+    <Compile Include="Models\Database\DatabaseConnection.cs" />
+    <Compile Include="Models\Database\DestinationData.cs" />
+    <Compile Include="Models\Database\PlaneData.cs" />
+    <Compile Include="Models\Database\PassengerData.cs" />
     <Compile Include="Models\Passenger.cs" />
     <Compile Include="Models\InventoryContainer.cs" />
     <Compile Include="Models\Destination.cs" />
