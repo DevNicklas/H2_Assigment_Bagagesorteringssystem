@@ -15,11 +15,13 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 	{
 		private const int TERMINAL_CHECK_INTERVAL = 5000;
 		private const int SIMULATION_CYCLE_INTERVAL = 3000;
+        internal const int NumberOfPerDayFlights = 1;
+        internal static int NumberOfTodaysFlights;
 
-		/// <summary>
-		/// Runs the airport simulator.
-		/// </summary>
-		internal static void RunSimulator()
+        /// <summary>
+        /// Runs the airport simulator.
+        /// </summary>
+        internal static void RunSimulator()
 		{
 			while (Airport.Status)
 			{
@@ -27,6 +29,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 				{
 					ProcessTerminal(terminal);
 				}
+				if (NumberOfPerDayFlights == NumberOfTodaysFlights)
+				{
+                    if (Airport.Terminals.All(terminal => !terminal.Status))
+                    {
+                        Airport.ChangeStatus();
+                    }
+
+                }
 				Thread.Sleep(SIMULATION_CYCLE_INTERVAL);
 			}
 		}
@@ -39,8 +49,12 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		{
 			if (terminal.Plane == null)
 			{
-				AssignNewPlaneToTerminal(terminal);
-                Thread.Sleep(TERMINAL_CHECK_INTERVAL);
+				if (NumberOfPerDayFlights > NumberOfTodaysFlights)
+				{
+                    AssignNewPlaneToTerminal(terminal);
+                    Thread.Sleep(TERMINAL_CHECK_INTERVAL);
+                }
+
             }
 			else if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
 			{
@@ -55,9 +69,13 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		/// <param name="terminal">The terminal to which a new plane is assigned.</param>
 		private static void AssignNewPlaneToTerminal(Terminal terminal)
 		{
+
 			Plane incomingPlane = Airport.AddRandomPlane();
 			terminal.Plane = incomingPlane;
-			GenerateNewBaggage(incomingPlane);
+			NumberOfTodaysFlights++;
+
+            GenerateNewBaggage(incomingPlane);
+
 			terminal.Open();
 		}
 
