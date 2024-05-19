@@ -12,11 +12,43 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
     {
         private const int TERMINAL_CHECK_INTERVAL = 5000;
         private const int SIMULATION_CYCLE_INTERVAL = 3000;
-        internal const int NumberOfPerDayFlights = 3;
+        private const int _numberOfPerDayFlights = 3;
 
-        internal static int NumberOfTodaysFlights;
-        internal static int NumberOfTodaysPassengers;
-        internal static int NumberOfTodaysBaggage;
+        private static int _numberOfTodaysFlights;
+        private static int _numberOfTodaysPassengers;
+        private static int _numberOfTodaysBaggage;
+
+        internal static int NumberOfPerDayFlights
+        {
+            get
+            {
+                return _numberOfPerDayFlights;
+            }
+        }
+
+        internal static int NumberOfTodaysFlights
+        {
+            get
+            {
+                return _numberOfTodaysFlights;
+            }
+        }
+
+        internal static int NumberOfTodaysPassengers
+        {
+            get
+            {
+                return _numberOfTodaysPassengers;
+            }
+        }
+
+        internal static int NumberOfTodaysBaggage
+        {
+            get
+            {
+                return _numberOfTodaysBaggage;
+            }
+        }
 
         /// <summary>
         /// Runs the airport simulator.
@@ -30,7 +62,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                     ProcessTerminal(terminal);
                 }
 
-                if (NumberOfPerDayFlights == NumberOfTodaysFlights && AreAllTerminalsClosed())
+                if (_numberOfPerDayFlights == _numberOfTodaysFlights && AreAllTerminalsClosed())
                 {
                     Airport.ChangeStatus();
                     // Generate and write report
@@ -61,7 +93,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
             if (terminal.Plane == null)
             {
-                if (NumberOfPerDayFlights > NumberOfTodaysFlights)
+                if (_numberOfPerDayFlights > _numberOfTodaysFlights)
                 {
                     AssignNewPlaneToTerminal(terminal);
                 }
@@ -80,9 +112,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
             Plane incomingPlane = Airport.AddRandomPlane();
             terminal.Plane = incomingPlane;
-            NumberOfTodaysFlights++;
-            NumberOfTodaysPassengers += terminal.Plane.MaxPassengers;
-            NumberOfTodaysBaggage += terminal.Plane.InventorySize;
+            _numberOfTodaysFlights++;
+            _numberOfTodaysPassengers += terminal.Plane.MaxPassengers;
+            _numberOfTodaysBaggage += terminal.Plane.InventorySize;
 
             GenerateNewBaggage(incomingPlane);
             terminal.Open();

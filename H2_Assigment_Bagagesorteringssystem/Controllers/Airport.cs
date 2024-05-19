@@ -20,7 +20,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		private static List<CheckIn> _checkIns = new List<CheckIn>();
 		private static List<Plane> _planes = new List<Plane>();
 		private static Queue<Baggage> _incomingBaggageQueue = new Queue<Baggage>();
-		private static string _name = "DinLufthavn";
         private static bool _status = false;
 
 		internal static Action ChangeAirportStatus;
