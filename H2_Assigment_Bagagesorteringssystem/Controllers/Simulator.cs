@@ -28,7 +28,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                 foreach (Terminal terminal in Airport.Terminals)
                 {
                     ProcessTerminal(terminal);
-                    Console.WriteLine("Open a terminal");
                 }
 
                 if (NumberOfPerDayFlights == NumberOfTodaysFlights && AreAllTerminalsClosed())

@@ -32,12 +32,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		{
 			_status = true;
             TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
+            Console.WriteLine("Opened a terminal");
         }
 
 		internal void Close()
 		{
 			_status = false;
             TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
+            Console.WriteLine("Closed a terminal");
         }
 
         internal void SendBaggageToPlane()
@@ -46,6 +48,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             if (baggage != null)
             {
                 _plane.AddToInventory(baggage);
+                Console.WriteLine($"Addet baggage: {baggage.BagageNumber} to plane: {_plane.FlightNumber}");
             }
         }
     }
