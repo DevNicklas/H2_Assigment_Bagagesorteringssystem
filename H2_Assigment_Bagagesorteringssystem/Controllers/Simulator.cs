@@ -64,7 +64,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		{
 			for (int i = 0; i < plane.InventorySize; i++)
 			{
-				Airport.IncomingBaggageQueue.Enqueue(new Baggage(plane.FlightNumber));
+				Baggage baggage = new Baggage(plane.FlightNumber);
+
+                Airport.IncomingBaggageQueue.Enqueue(baggage);
 			}
 		}
 
