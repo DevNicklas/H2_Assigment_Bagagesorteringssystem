@@ -14,33 +14,32 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		private List<Baggage> _inventory = new List<Baggage>();
 		private int _inventorySize;
 
-
-		internal List<Baggage> Inventory
+		internal InventoryContainer(int inventorySize)
 		{
-			get
-			{
-				return _inventory;
-			}
+				this._inventorySize = inventorySize;
 		}
-		internal int InventorySize 
-		{
+
+        internal List<Baggage> Inventory
+        {
+            get
+            {
+                return _inventory;
+            }
+        }
+        internal int InventorySize
+        {
             get
             {
                 return _inventorySize;
             }
-		}
+        }
 
-
-		internal InventoryContainer(int inventorySize)
-			{
-				this._inventorySize = inventorySize;
-			}
-		/// <summary>
-		/// Add baggage to inventory
-		/// </summary>
-		/// <param name="baggage"></param>
-		/// <returns></returns>
-		internal bool AddToInventory(Baggage baggage)
+        /// <summary>
+        /// Add baggage to inventory
+        /// </summary>
+        /// <param name="baggage"></param>
+        /// <returns></returns>
+        internal bool AddToInventory(Baggage baggage)
 		{
 			if(_inventorySize > Inventory.Count)
 			{ 
