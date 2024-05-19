@@ -72,7 +72,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             Baggage baggage = this.RemoveFromInventory();
             if (baggage != null)
             {
-                Console.WriteLine($"CheckIn sent baggage: {baggage.BagageNumber} to SortingSystem");
+                Console.WriteLine($"CheckIn sent baggage: {baggage.BaggageNumber} to SortingSystem");
                 Airport.SortingSystems[0].EnqueueBaggage(baggage);
             }
         }
