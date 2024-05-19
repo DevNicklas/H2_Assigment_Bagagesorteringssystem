@@ -13,8 +13,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
     /// </summary>
     internal class DatabaseConnection
     {
-        private readonly string filePath = @"C:\connection.txt";
-        private string connectionString;
+        private readonly string _filePath = @"C:\connection.txt";
+        private string _connectionString;
 
         /// <summary>
         /// Initializes a new instance of the DatabaseConnection class and loads the connection string from a file.
@@ -31,7 +31,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
         {
             try
             {
-                connectionString = File.ReadAllText(filePath).Trim();
+                _connectionString = File.ReadAllText(_filePath).Trim();
             }
             catch (Exception ex)
             {
@@ -44,7 +44,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
         /// </summary>
         internal MySqlConnection GetConnection()
         {
-            return new MySqlConnection(connectionString);
+            return new MySqlConnection(_connectionString);
         }
     }
 }
