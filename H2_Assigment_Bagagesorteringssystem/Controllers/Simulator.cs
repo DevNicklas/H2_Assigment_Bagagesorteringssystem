@@ -12,7 +12,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
     {
         private const int TERMINAL_CHECK_INTERVAL = 5000;
         private const int SIMULATION_CYCLE_INTERVAL = 3000;
-        private const int _numberOfPerDayFlights = 1;
+        private const int _numberOfPerDayFlights = 10;
 
         private static int _numberOfTodaysFlights;
         private static int _numberOfTodaysPassengers;

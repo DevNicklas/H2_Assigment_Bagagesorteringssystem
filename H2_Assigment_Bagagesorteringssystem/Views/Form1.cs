@@ -40,7 +40,6 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// </summary>
        void IView.UpdateAirportStatusLabel()
         {
-            Console.WriteLine("e");
             if (airportStatusLabel.InvokeRequired)
             {
                 airportStatusLabel.Invoke(new Action(UpdateAirportStatusLabel));
