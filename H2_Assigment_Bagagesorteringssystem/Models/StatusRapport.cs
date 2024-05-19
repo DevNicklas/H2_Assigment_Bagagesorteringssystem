@@ -34,7 +34,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         /// Writes the status report to a text file.
         /// </summary>
         /// <param name="filePath">The path of the file to write the report to.</param>
-        public void WriteReportToFile(string filePath)
+        internal void WriteReportToFile(string filePath)
         {
             string reportContent = GenerateReportContent();
             File.WriteAllText(filePath, reportContent);
