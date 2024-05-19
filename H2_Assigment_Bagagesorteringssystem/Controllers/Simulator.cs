@@ -62,7 +62,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
                     ProcessTerminal(terminal);
                 }
 
-                if (NumberOfPerDayFlights == NumberOfTodaysFlights && AreAllTerminalsClosed())
+                if (_numberOfPerDayFlights == _numberOfTodaysFlights && AreAllTerminalsClosed())
                 {
                     Airport.ChangeStatus();
                     // Generate and write report
@@ -93,7 +93,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
             if (terminal.Plane == null)
             {
-                if (NumberOfPerDayFlights > NumberOfTodaysFlights)
+                if (_numberOfPerDayFlights > _numberOfTodaysFlights)
                 {
                     AssignNewPlaneToTerminal(terminal);
                 }
@@ -112,9 +112,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
             Plane incomingPlane = Airport.AddRandomPlane();
             terminal.Plane = incomingPlane;
-            NumberOfTodaysFlights++;
-            NumberOfTodaysPassengers += terminal.Plane.MaxPassengers;
-            NumberOfTodaysBaggage += terminal.Plane.InventorySize;
+            _numberOfTodaysFlights++;
+            _numberOfTodaysPassengers += terminal.Plane.MaxPassengers;
+            _numberOfTodaysBaggage += terminal.Plane.InventorySize;
 
             GenerateNewBaggage(incomingPlane);
             terminal.Open();
