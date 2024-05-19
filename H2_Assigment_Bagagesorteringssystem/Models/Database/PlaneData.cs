@@ -36,9 +36,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
         }
 
         /// <summary>
-        /// Fetches flights from the database and populates the Planes list.
+        /// Fetches planes from the database and populates the Planes list.
         /// </summary>
-        internal void FetchFlights()
+        internal void FetchPlanes()
         {
             MySqlConnection conn = _dbConnection.GetConnection();
 
