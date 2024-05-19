@@ -13,7 +13,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 	/// </summary>
 	internal static class Simulator
 	{
-		private const int TERMINAL_CHECK_INTERVAL = 10000;
+		private const int TERMINAL_CHECK_INTERVAL = 5000;
 		private const int SIMULATION_CYCLE_INTERVAL = 3000;
 
 		/// <summary>
@@ -40,12 +40,13 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 			if (terminal.Plane == null)
 			{
 				AssignNewPlaneToTerminal(terminal);
-			}
+                Thread.Sleep(TERMINAL_CHECK_INTERVAL);
+            }
 			else if (terminal.Plane.InventorySize <= terminal.Plane.Inventory.Count)
 			{
 				CloseTerminalAndRemovePlane(terminal);
 			}
-			Thread.Sleep(TERMINAL_CHECK_INTERVAL);
+			
 		}
 
 		/// <summary>
