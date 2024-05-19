@@ -8,9 +8,15 @@ using System.IO;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+    /// <summary>
+    /// Handles the generation and writing of status reports for the airport.
+    /// </summary>
     internal class StatusRapport
     {
-        // Method to generate report content
+        /// <summary>
+        /// Generates the content of the status report.
+        /// </summary>
+        /// <returns>A string containing the content of the status report.</returns>
         private string GenerateReportContent()
         {
             StringBuilder sb = new StringBuilder();
@@ -24,7 +30,10 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 
             return sb.ToString();
         }
-        // Method to write the report to a text file
+        /// <summary>
+        /// Writes the status report to a text file.
+        /// </summary>
+        /// <param name="filePath">The path of the file to write the report to.</param>
         public void WriteReportToFile(string filePath)
         {
             string reportContent = GenerateReportContent();
