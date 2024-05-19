@@ -198,6 +198,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 				_incomingBaggageQueue.Clear();
 				_planes.Clear();
+                Application.Exit();
             }
             else
             {
