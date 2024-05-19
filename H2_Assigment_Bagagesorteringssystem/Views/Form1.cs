@@ -27,28 +27,27 @@ namespace H2_Assigment_Bagagesorteringssystem
         /// <param name="e">An EventArgs that contains the event data.</param>
         private void toggleAirportStatusBtn_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(Airport.Status);
             // Check if the airport is currently not running
             if (!Airport.Status)
             {
                 Airport.ChangeStatus();
-
-				// Update the status label to reflect the change
-				UpdateAirportStatusLabel();
             }
         }
 
         /// <summary>
         /// Update view for airport status
         /// </summary>
-        void IView.UpdateAirportStatusLabel()
+       void IView.UpdateAirportStatusLabel()
         {
-            if (Airport.Status)
+            Console.WriteLine("e");
+            if (airportStatusLabel.InvokeRequired)
             {
-                airportStatusLabel.Text = "Status: Open";
+                airportStatusLabel.Invoke(new Action(UpdateAirportStatusLabel));
             }
             else
             {
-                airportStatusLabel.Text = "Status: Closed";
+                airportStatusLabel.Text = Airport.Status ? "Status: Open" : "Status: Closed";
             }
         }
 

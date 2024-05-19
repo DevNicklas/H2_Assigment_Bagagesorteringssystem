@@ -17,6 +17,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
         {
             _view = view;
 
+            Airport.ChangeAirportStatus += UpdateAirportStatusLabel;
+
             Airport.CheckIns[0].CheckInStatusChanged += (sender, e) => OnCheckInStatusUpdate(0);
             Airport.CheckIns[1].CheckInStatusChanged += (sender, e) => OnCheckInStatusUpdate(1);
 
@@ -27,6 +29,11 @@ namespace H2_Assigment_Bagagesorteringssystem.Views
             sortingSystem.AddToSortingQueue += (sender, e) => OnSortingQueueAdd(sortingSystem.NewlyQueuedBaggage);
 
             sortingSystem.RemoveFromSortingQueue += (sender, e) => OnSortingQueueRemoved(sortingSystem.NewlyDequeuedBaggage);
+        }
+
+        private void UpdateAirportStatusLabel()
+        {
+            _view.UpdateAirportStatusLabel();
         }
 
         private void OnCheckInStatusUpdate(sbyte idx)
