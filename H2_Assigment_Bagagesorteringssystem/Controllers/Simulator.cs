@@ -12,11 +12,43 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
     {
         private const int TERMINAL_CHECK_INTERVAL = 5000;
         private const int SIMULATION_CYCLE_INTERVAL = 3000;
-        internal const int NumberOfPerDayFlights = 3;
+        private const int _numberOfPerDayFlights = 3;
 
-        internal static int NumberOfTodaysFlights;
-        internal static int NumberOfTodaysPassengers;
-        internal static int NumberOfTodaysBaggage;
+        private static int _numberOfTodaysFlights;
+        private static int _numberOfTodaysPassengers;
+        private static int _numberOfTodaysBaggage;
+
+        internal static int NumberOfPerDayFlights
+        {
+            get
+            {
+                return _numberOfPerDayFlights;
+            }
+        }
+
+        internal static int NumberOfTodaysFlights
+        {
+            get
+            {
+                return _numberOfTodaysFlights;
+            }
+        }
+
+        internal static int NumberOfTodaysPassengers
+        {
+            get
+            {
+                return _numberOfTodaysPassengers;
+            }
+        }
+
+        internal static int NumberOfTodaysBaggage
+        {
+            get
+            {
+                return _numberOfTodaysBaggage;
+            }
+        }
 
         /// <summary>
         /// Runs the airport simulator.
