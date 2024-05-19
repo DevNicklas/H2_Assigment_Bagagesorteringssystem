@@ -28,7 +28,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         {
             get { return _flightNumber; }
         }
-        internal string BagageNumber
+        internal string BaggageNumber
         {
             get { return _baggageNumber; }
         }
