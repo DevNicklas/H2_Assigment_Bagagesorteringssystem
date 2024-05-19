@@ -20,6 +20,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 		private static string _name = "DinLufthavn";
         private static bool _status = false;
 
+		internal static Action ChangeAirportStatus;
+
         internal static List<Terminal> Terminals
         {
             get
@@ -67,7 +69,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             }
         }
 
-		internal static void InitializeAirport()
+        internal static void InitializeAirport()
 		{
             for (int i = 0; i < 2; i++)
             {
@@ -92,15 +94,18 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
 
 		private static void StartThreads()
 		{
-			Thread threadCheckin = new Thread(RunCheckIn);
-			Thread threadTerminal = new Thread(RunTerminal);
-			Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
-			Thread threadSim = new Thread(Simulator.RunSimulator);
+            if(_status)
+            {
+                Thread threadCheckin = new Thread(RunCheckIn);
+                Thread threadTerminal = new Thread(RunTerminal);
+                Thread threadSort = new Thread(_sortingSystems[0].StartSystem);
+                Thread threadSim = new Thread(Simulator.RunSimulator);
 
-			threadCheckin.Start();
-			threadTerminal.Start();
-			threadSort.Start();
-			threadSim.Start();
+                threadCheckin.Start();
+                threadTerminal.Start();
+                threadSort.Start();
+                threadSim.Start();
+            }
 
 		}
 		internal static void RunCheckIn()
@@ -153,13 +158,35 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
             if (_status)
             {
                 _status = false;
+                ChangeAirportStatus?.Invoke();
+
+                foreach (CheckIn checkIn in _checkIns)
+				{
+                    checkIn.Inventory.Clear();
+                    checkIn.Close();
+				}
+                foreach (SortingSystem sortingSystem in _sortingSystems)
+                {
+                    sortingSystem.Inventory.Clear();
+                }
+                foreach (Terminal terminal in _terminals)
+                {
+                    terminal.Inventory.Clear();
+                    terminal.Close();
+                }
+
+				_incomingBaggageQueue.Clear();
+				_planes.Clear();
+                Simulator.NumberOfTodaysPassengers = 0;
+                Simulator.NumberOfTodaysFlights = 0;
             }
             else
             {
                 _status = true;
-				RunAirport();
+                ChangeAirportStatus?.Invoke();
+                RunAirport();
 			}
-		}
+        }
 		internal static Plane AddRandomPlane()
 		{
 			return AddPlane(100, "KBH");
@@ -194,5 +221,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Controllers
         {
             _terminals.Add(new Terminal(1));
 		}
+
     }
 }
