@@ -7,16 +7,26 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models.Database
 {
+    /// <summary>
+    /// Handles data retrieval for planes from the database.
+    /// </summary>
     internal class PlaneData
     {
         private readonly DatabaseConnection _dbConnection;
         private List<Plane> _planes = new List<Plane>();
 
+        /// <summary>
+        /// Initializes a new instance of the PlaneData class with the specified database connection.
+        /// </summary>
+        /// <param name="dbConnection">The database connection to use for fetching planes.</param>
         public PlaneData(DatabaseConnection dbConnection)
         {
             _dbConnection = dbConnection;
         }
 
+        /// <summary>
+        /// Gets the list of planes fetched from the database.
+        /// </summary>
         internal List<Plane> Planes
         {
             get
@@ -25,6 +35,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models.Database
             }
         }
 
+        /// <summary>
+        /// Fetches flights from the database and populates the Planes list.
+        /// </summary>
         internal void FetchFlights()
         {
             MySqlConnection conn = _dbConnection.GetConnection();

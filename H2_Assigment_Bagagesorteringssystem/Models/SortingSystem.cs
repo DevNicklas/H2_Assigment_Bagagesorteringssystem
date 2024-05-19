@@ -9,6 +9,9 @@ using H2_Assigment_Bagagesorteringssystem.Controllers;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+    /// <summary>
+    /// Represents a baggage sorting system responsible for sorting incoming baggage to terminals.
+    /// </summary>
     internal class SortingSystem: InventoryContainer
     {
         private Queue<Baggage> _inputQueue = new Queue<Baggage>();

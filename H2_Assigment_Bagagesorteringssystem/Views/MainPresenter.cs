@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Views
 {
+    /// <summary>
+    /// Presenter class responsible for handling interactions between the view and the model.
+    /// </summary>
     internal class MainPresenter
     {
         private IView _view;

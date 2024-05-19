@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+    /// <summary>
+    /// Represents a passenger associated with a flight.
+    /// </summary>
     internal class Passenger
     {
         private string _firstName;
@@ -20,6 +23,14 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		internal int FlightNumber { get { return _flightNumber; } }
 		internal string BoardingPassNumber { get { return _boardingPassNumber; } }
 
+        /// <summary>
+        /// Initializes a new instance of the Passenger class with the specified details.
+        /// </summary>
+        /// <param name="firstName">The first name of the passenger.</param>
+        /// <param name="lastName">The last name of the passenger.</param>
+        /// <param name="passportNumber">The passport number of the passenger.</param>
+        /// <param name="flightNumber">The flight number associated with the passenger.</param>
+        /// <param name="boardingPassNumber">The boarding pass number of the passenger.</param>
         internal Passenger(string firstName, string lastName, string passportNumber, int flightNumber, string boardingPassNumber)
         {
             _firstName = firstName;

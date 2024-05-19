@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
+    /// <summary>
+    /// Represents a terminal in the airport responsible for managing baggage and interacting with planes.
+    /// </summary>
     internal class Terminal : InventoryContainer
     {
         private bool _status = false;
@@ -25,23 +28,35 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 			set { _plane = value; }
 		}
 
-		public Terminal(int inventorySize) : base(inventorySize) { }
+        /// <summary>
+        /// Initializes a new instance of the Terminal class with the specified inventory size.
+        /// </summary>
+        /// <param name="inventorySize">The maximum inventory size of the terminal.</param>
+        public Terminal(int inventorySize) : base(inventorySize) { }
 
-
-		internal void Open()
+        /// <summary>
+        /// Opens the terminal.
+        /// </summary>
+        internal void Open()
 		{
 			_status = true;
             TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
             Console.WriteLine("Opened a terminal");
         }
 
-		internal void Close()
+        /// <summary>
+        /// Closes the terminal.
+        /// </summary>
+        internal void Close()
 		{
 			_status = false;
             TerminalStatusChanged?.Invoke(this, EventArgs.Empty);
             Console.WriteLine("Closed a terminal");
         }
 
+        /// <summary>
+        /// Sends baggage from the terminal to the associated plane.
+        /// </summary>
         internal void SendBaggageToPlane()
         {
             Baggage baggage = this.RemoveFromInventory();

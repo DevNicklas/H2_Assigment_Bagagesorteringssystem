@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 namespace H2_Assigment_Bagagesorteringssystem.Models
 {
-	internal class Reservation
+    /// <summary>
+    /// Represents a reservation linking a passenger, plane, and baggage.
+    /// </summary>
+    internal class Reservation
 	{
 		private Passenger _passenger;
 		private Plane _plane;
 		private Baggage _bagage;
 
-		internal Reservation(Passenger passenger, Plane plane, Baggage bagage)
+        /// <summary>
+        /// Initializes a new instance of the Reservation class with the specified passenger, plane, and baggage.
+        /// </summary>
+        /// <param name="passenger">The passenger associated with the reservation.</param>
+        /// <param name="plane">The plane associated with the reservation.</param>
+        /// <param name="bagage">The baggage associated with the reservation.</param>
+        internal Reservation(Passenger passenger, Plane plane, Baggage bagage)
 		{
 			_passenger = passenger;
 			_plane = plane;
