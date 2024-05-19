@@ -15,10 +15,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
         private string _country;
         private string _airportCode;
 
-        public string City { get { return _city; } }
-        public string Country { get { return _country; } }
-        public string AirportCode { get { return _airportCode; } }
-
         /// <summary>
         /// Initializes a new instance of the Destination class with the specified city, country, and airport code.
         /// </summary>
@@ -31,5 +27,9 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             _country = country;
             _airportCode = airportCode;
         }
+
+        public string City { get { return _city; } }
+        public string Country { get { return _country; } }
+        public string AirportCode { get { return _airportCode; } }
     }
 }
