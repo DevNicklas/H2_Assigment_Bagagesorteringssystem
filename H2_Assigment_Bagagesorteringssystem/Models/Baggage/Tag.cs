@@ -12,21 +12,22 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		private int _flightNumber;
 		private string _baggageNumber;
 
-		internal int FlightNumber
-		{
-			get { return _flightNumber; }
-		}
-		internal string BagageNumber
-		{
-			get { return _baggageNumber; }
-		}
 		internal Tag(int flightNumber) 
 		{
 			_flightNumber = flightNumber;
 			_baggageNumber = GenerateBaggageNumber();
 		}
 
-		private string GenerateBaggageNumber()
+        internal int FlightNumber
+        {
+            get { return _flightNumber; }
+        }
+        internal string BagageNumber
+        {
+            get { return _baggageNumber; }
+        }
+
+        private string GenerateBaggageNumber()
 		{
 			Thread.Sleep(1);
 			int numbers = (int)(DateTime.Now.Ticks % int.MaxValue);
