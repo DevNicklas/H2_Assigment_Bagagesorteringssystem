@@ -15,15 +15,6 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 		private int _flightNumber;
 		private string _baggageNumber;
 
-		internal int FlightNumber
-		{
-			get { return _flightNumber; }
-		}
-		internal string BagageNumber
-		{
-			get { return _baggageNumber; }
-		}
-
         /// <summary>
         /// Initializes a new instance of the Tag class with the specified flight number.
         /// </summary>
@@ -32,6 +23,15 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 			_flightNumber = flightNumber;
 			_baggageNumber = GenerateBaggageNumber();
 		}
+
+        internal int FlightNumber
+        {
+            get { return _flightNumber; }
+        }
+        internal string BaggageNumber
+        {
+            get { return _baggageNumber; }
+        }
 
         /// <summary>
         /// Generates a unique baggage number based on current ticks and random characters.
