@@ -98,7 +98,8 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
 				{
 					if (terminal.AddToInventory(baggage))
 					{
-						return;
+                        Console.WriteLine($"SortingSystem sortet baggage: {baggage.BagageNumber}");
+                        return;
 					}
 				}
 			}

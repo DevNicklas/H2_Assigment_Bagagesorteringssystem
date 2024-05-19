@@ -48,7 +48,7 @@ namespace H2_Assigment_Bagagesorteringssystem.Models
             if (baggage != null)
             {
                 _plane.AddToInventory(baggage);
-                Console.WriteLine($"Addet baggage: {baggage.BagageNumber} to plane: {_plane.FlightNumber}");
+                Console.WriteLine($"Terminal Addet baggage: {baggage.BagageNumber} to plane: {_plane.FlightNumber}");
             }
         }
     }
